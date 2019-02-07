@@ -10,6 +10,8 @@
 		
 		$result2 = mysqli_query($con, $insert);	
 		
+		
+		
 		$select="SELECT * FROM user";
 		
 		$result = mysqli_query($con,$select);	
@@ -26,6 +28,8 @@
 			echo "0 results";
 		}	
 	}
+
+
 
 ?>
 
