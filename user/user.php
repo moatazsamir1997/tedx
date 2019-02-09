@@ -68,76 +68,11 @@
 		</div>
 	<?php	if(isset($_POST['submit'])){
 
-if($_SESSION['password']==$_POST['password']){
-
-	if($_POST['password']==$_POST['confirmPassword']){
-
-		$sqlAdd="DELETE FROM address WHERE userId = '".$_SESSION['userId']."' ";
-		if(mysqli_query($conn,$sqlAdd)){
-
-			if($_SESSION['typeId']==2){
-
-				$sqlParent="DELETE FROM parent WHERE userId = '".$_SESSION['userId']."' ";
-				if(mysqli_query($conn,$sqlParent)){
-
-					//Check if there a children for this account first:
-					$child="SELECT * FROM child WHERE userId='".$_SESSION['userId']."'";
-					if(mysqli_num_rows($child)>0){ 
-
-						$sqlChild="DELETE FROM child WHERE userId = '".$_SESSION['userId']."' ";
-						if(mysqli_query($conn,$sqlChild)){
-							$check = 1;
-						}
-						else{
-							echo "ERROR: Could not able to execute $sqlChild. ". mysqli_error($conn);
-						}  
-					}
-					else if(mysqli_num_rows($child)==0){
-						$check = 1;
-					}          
-				}
-				else{
-					echo "ERROR: Could not able to execute $sqlParent. ". mysqli_error($conn);
-				}            
-			}
-			else if($_SESSION['typeId']==3){
-
-				$sqlEmp="DELETE FROM employee WHERE userId = '".$_SESSION['userId']."' ";
-				if(mysqli_query($conn,$sqlEmp)){
-
-					$sqlUploads="DELETE FROM uploads WHERE userId = '".$_SESSION['userId']."' ";
-					if(mysqli_query($conn,$sqlUploads)){
-						$check = 1;
-					}
-					else{
-						echo "ERROR: Could not able to execute $sqlUploads. ". mysqli_error($conn);
-					}            
-				}
-				else{
-					echo "ERROR: Could not able to execute $sqlEmp. ". mysqli_error($conn);
-				}        
-			}
-		}
-		else{
-			echo "ERROR: Could not able to execute $sqlAdd. ". mysqli_error($conn);
-		}
+		$deleteAccount="DELETE FROM address WHERE userId = '".$_SESSION['userId']."' ";
+	
 
 		
-		if($check==1){
-
-			$lastSql="DELETE FROM user WHERE id = '".$_SESSION['userId']."' ";
-			if(mysqli_query($conn,$sqlUploads)){
-				session_destroy();
-				header("location:../html/Welcome_Page.php");
-			}
-			else{
-				echo "ERROR: Could not able to execute $lastSql. ". mysqli_error($conn);
-			}
-		}
-	}
-	else{
-		echo"Sorry, you have entered the password wrong<br>";
-	}
+	
 }
 }
 mysqli_close($conn); ?>
