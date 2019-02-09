@@ -42,6 +42,9 @@
 				<form method="POST" action="#">
 					<p>user name </p>
 					<input type="text" name="name" placeholder="Enter username here">
+					<p>password </p>
+					<input type="password" name="password">
+
 					<br><br><br>
 					<input type="submit" name="submit" value="Login">
 					<br><br><br>
