@@ -69,12 +69,20 @@
 		   JOIN user  ON usertype.id = user.userTypeId
 			JOIN usertypelinks  ON usertype.id = usertypelinks.userTypeId
 		WHERE usertype.name='".$requestedName."'";
-		$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` IN '".$select."'";
+		$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` IN  (SELECT usertype.id
+		FROM usertype 
+	   JOIN user  ON usertype.id = user.userTypeId
+		JOIN usertypelinks  ON usertype.id = usertypelinks.userTypeId
+	WHERE usertype.name='".$requestedName."')";
 		$result3 = mysqli_query($conn, $delete3);	
-		$delete2="DELETE FROM `user` WHERE `userTypeId` IN '".$select."'";
+		$delete2="DELETE FROM `user` WHERE `userTypeId` IN (SELECT usertype.id
+		FROM usertype 
+	   JOIN user  ON usertype.id = user.userTypeId
+		JOIN usertypelinks  ON usertype.id = usertypelinks.userTypeId
+	WHERE usertype.name='".$requestedName."')";
 			$result2 = mysqli_query($conn, $delete2);
-		 $delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
-			$result = mysqli_query($conn, $delete);	
+		//  $delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
+		// 	$result = mysqli_query($conn, $delete);	
 				
 			
 			if (mysqli_connect_errno()) {
@@ -82,7 +90,7 @@
 				exit();
 			}
 			
-			if (!mysqli_query($conn, $delete)) {
+			if (!mysqli_query($conn, $delete3)) {
 				printf("Errormessage: %s\n", mysqli_error($conn));
 			}
 			
