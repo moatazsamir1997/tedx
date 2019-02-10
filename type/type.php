@@ -21,6 +21,12 @@
 			<input type="text" name="updatedName" placeholder="Enter updated Name">
 			<input type="submit" name="updateType" value="update">
 		</form>		
+
+<p>
+
+</p>
+
+
 	</body>
 </html>
 
@@ -55,28 +61,37 @@
 	if(isset($_POST['deleteType']))
 	{
 		$requestedName = $_POST["deletedName"];
-		echo "requestedName = ";var_dump($requestedName);
 		echo '<br>';
-		if ($requestedName != "") {
-			$select="SELECT usertype.id
-					FROM usertype 
-					JOIN user  
-					ON usertype.id = user.userTypeId
-					JOIN usertypelinks  
-					ON usertype.id = usertypelinks.userTypeId
-					WHERE usertype.name='".$requestedName."'";
-			$delete="DELETE 
+		if ($requestedName != "") 
+		{
+			$select="SELECT `id`
 					 FROM `usertype` 
-					 WHERE `name` = '".$requestedName."'";
-			$result = mysqli_query($conn, $delete);	
-			$delete2="DELETE FROM `user` WHERE `userTypeId` = '".$select."'";
-			$result2 = mysqli_query($conn, $delete2);	
-			$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` = '".$select."'";
+					 WHERE `name`='$requestedName'";
+			//user
+			$delete2="DELETE FROM `user` WHERE `userTypeId` = ($select)";
+			$result2 = mysqli_query($conn, $delete2);
+			//usertypeLinks
+			$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` = ($select)";
 			$result3 = mysqli_query($conn, $delete3);	
-
+			//usertype		 
+			$delete="DELETE FROM `usertype` WHERE `name` = '$requestedName'";
+			$result = mysqli_query($conn, $delete);	
+		 
+				
+			
+			if (mysqli_connect_errno()) {
+				printf("Connect failed: %s\n", mysqli_connect_error());
+				exit();
+			}
+			
+			if (!mysqli_query($conn, $delete)) {
+				echo "<br>";
+				printf("Errormessage: %s\n", mysqli_error($conn));
+			}
+			
 		}
 		
-		
+		echo "<br><br>";
 		$select="SELECT * FROM `usertype`";
 		$result = mysqli_query($conn,$select);	
 		if ($result->num_rows > 0) 
