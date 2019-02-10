@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2019 at 04:47 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Feb 10, 2019 at 10:09 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,13 @@ CREATE TABLE `links` (
   `friendlyName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `links`
+--
+
+INSERT INTO `links` (`id`, `physicalName`, `friendlyName`) VALUES
+(1, 'registration.php', 'register');
+
 -- --------------------------------------------------------
 
 --
@@ -51,18 +58,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `userTypeId`) VALUES
-(1, 'mohamed', 1),
-(2, 'mohamed', 1),
-(3, 'mohamed', 1),
-(4, 'mohamed', 1),
-(5, 'mohamed', 1),
-(6, 'mohamed', 1),
-(7, 'mohamed', 1),
-(8, 'mohamed', 1),
-(9, 'mohamed', 1),
-(10, 'mohamed', 1),
-(11, 'mohamed', 1),
-(12, 'mohamed', 1);
+(31, 'mohamed', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +76,14 @@ CREATE TABLE `usertype` (
 --
 
 INSERT INTO `usertype` (`id`, `name`) VALUES
-(1, 'employee');
+(1, 'employee'),
+(2, 'manager@gmail.com'),
+(3, 'dddd'),
+(4, 'mohamed'),
+(5, 'manager'),
+(6, 'mohamed'),
+(7, 'doctor'),
+(8, 'sasss');
 
 -- --------------------------------------------------------
 
@@ -93,6 +96,13 @@ CREATE TABLE `usertypelinks` (
   `userTypeId` int(11) NOT NULL,
   `linkId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usertypelinks`
+--
+
+INSERT INTO `usertypelinks` (`id`, `userTypeId`, `linkId`) VALUES
+(1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -133,25 +143,25 @@ ALTER TABLE `usertypelinks`
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `usertype`
 --
 ALTER TABLE `usertype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `usertypelinks`
 --
 ALTER TABLE `usertypelinks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

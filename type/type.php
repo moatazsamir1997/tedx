@@ -65,7 +65,9 @@
 					JOIN usertypelinks  
 					ON usertype.id = usertypelinks.userTypeId
 					WHERE usertype.name='".$requestedName."'";
-			$delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
+			$delete="DELETE 
+					 FROM `usertype` 
+					 WHERE `name` = '".$requestedName."'";
 			$result = mysqli_query($conn, $delete);	
 			$delete2="DELETE FROM `user` WHERE `userTypeId` = '".$select."'";
 			$result2 = mysqli_query($conn, $delete2);	
