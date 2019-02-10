@@ -33,15 +33,13 @@
 	if(isset($_POST['add']))
 	{
 		$requestedName = $_POST["name"];
-		var_dump($requestedName);
 		if ($requestedName != "") {
-			$insert="INSERT INTO usertype (`name`) VALUES ('$requestedName');";
+			$insert="INSERT INTO type (`name`) VALUES ('$requestedName');";
 			$result = mysqli_query($conn, $insert);	
 		}
 		
 		
-		$select="SELECT * FROM `usertype`";
-
+		$select="SELECT * FROM type";
 		$result = mysqli_query($conn,$select);	
 		if ($result->num_rows > 0) 
 		{
@@ -59,12 +57,12 @@
 		var_dump($requestedName);
 		echo '<br>';
 		if ($requestedName != "") {
-			$delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
+			$delete="DELETE FROM `type` WHERE `name` = '".$requestedName."'";
 			$result = mysqli_query($conn, $delete);	
 		}
 		
 		
-		$select="SELECT * FROM `usertype`";
+		$select="SELECT * FROM `type`";
 		$result = mysqli_query($conn,$select);	
 		if ($result->num_rows > 0) 
 		{
