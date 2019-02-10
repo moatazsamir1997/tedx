@@ -15,7 +15,12 @@
 			<input type="submit" name="deleteType" value="delete">
 		</form>	
 		
-		
+		<form method="POST" action="#">
+			<h3>Update user</h3>
+			<input type="text" name="typeName" placeholder="Enter username here">
+			<input type="text" name="updatedName" placeholder="Enter updated Name">
+			<input type="submit" name="updateAccount" value="update">
+		</form>		
 
 <p>
 
@@ -75,5 +80,34 @@
 		} 
 		else {echo "0 results";}
 	}	
+
+	if(isset($_POST['updateAccount']))
+	{
+		$requestedName = $_POST["typeName"];
+		$updatedName = $_POST["updatedName"];
+		var_dump($requestedName);
+		var_dump($updatedName);
+		echo '<br>';
+		if ($requestedName != "") {
+			$update="UPDATE `usertype`
+			SET `name` = '$updatedName'
+			WHERE `name` = '$requestedName' ;";
+			$result = mysqli_query($conn, $update);	
+		}
+		
+		
+		$select="SELECT * FROM `usertype`";
+		$result = mysqli_query($conn,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row["name"]."<br>";
+			}
+		} 
+		else {echo "0 results";
+		}
+	}	
+
 	
 ?>
