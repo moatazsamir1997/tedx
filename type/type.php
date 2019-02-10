@@ -69,13 +69,23 @@
 		   JOIN user  ON usertype.id = user.userTypeId
 			JOIN usertypelinks  ON usertype.id = usertypelinks.userTypeId
 		WHERE usertype.name='".$requestedName."'";
-			$delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
+		$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` IN '".$select."'";
+		$result3 = mysqli_query($conn, $delete3);	
+		$delete2="DELETE FROM `user` WHERE `userTypeId` IN '".$select."'";
+			$result2 = mysqli_query($conn, $delete2);
+		 $delete="DELETE FROM `usertype` WHERE `name` = '".$requestedName."'";
 			$result = mysqli_query($conn, $delete);	
-			$delete2="DELETE FROM `user` WHERE `userTypeId` = '".$select."'";
-			$result2 = mysqli_query($conn, $delete2);	
-			$delete3="DELETE FROM `usertypelinks` WHERE `userTypeId` = '".$select."'";
-			$result3 = mysqli_query($conn, $delete3);	
-
+				
+			
+			if (mysqli_connect_errno()) {
+				printf("Connect failed: %s\n", mysqli_connect_error());
+				exit();
+			}
+			
+			if (!mysqli_query($conn, $delete)) {
+				printf("Errormessage: %s\n", mysqli_error($conn));
+			}
+			
 		}
 		
 		
