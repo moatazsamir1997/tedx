@@ -61,15 +61,26 @@
 		
 		
 		
-		$select="SELECT usertypelinks.userTypeId,usertypelinks.linkId,usertype.name,usertype.id,links.physicalName,links.friendlyName,links.id FROM  (((usertypelinks INNER JOIN usertype on usertypelinks.userTypeId = usertype.id)INNER JOIN links ON usertypelinks.linkId = links.id)";;
+		$select="SELECT usertypelinks.userTypeId,
+		usertypelinks.linkId,
+		usertype.name,
+		usertype.id,
+		links.physicalName,
+		links.friendlyName,
+		links.id FROM
+		(((usertypelinks INNER JOIN usertype on
+		 usertypelinks.userTypeId = usertype.id)
+		  INNER JOIN links ON
+		   usertypelinks.linkId = links.id)";
 		$result = mysqli_query($conn,$select);	
 		if ($result->num_rows > 0) 
 		{
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
-
-				
-				echo $row["name"].$row["physicalName"].$row["friendlyName"]. "<br>";
+			while($row = $result->fetch_assoc()) 
+			{
+				echo $row["name"];
+				echo $row["physicalName"];
+				echo $row["friendlyName"];	
 			}
 		} 
 		else {echo "0 results";}
