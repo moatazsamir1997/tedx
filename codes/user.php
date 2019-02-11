@@ -31,27 +31,19 @@
 	{
 		$requestedName = $_POST["name"];
 		if ($requestedName != "") {
-			$insert="INSERT INTO user (`name` , `userTypeId`) VALUES ('$requestedName' , 1);";
+			$insert="INSERT INTO `user`(`name`, `userTypeId`) VALUES ('$requestedName',16);";
 			$result = mysqli_query($conn, $insert);	
 		}
 		
-		
-		$select="SELECT * FROM user";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {	
-				echo $row["name"]."<br>";
-			}
-		} 
-		else {echo "0 results";}
+		$tableName = "user";
+		$columnName = "name";
+		read($tableName,$columnName);
 	}	
 	
 	if(isset($_POST['deleteAccount']))
 	{
 		$requestedName = $_POST["userName"];
-		var_dump($requestedName);
+		
 		echo '<br>';
 		if ($requestedName != "") {
 			$delete="DELETE FROM `user` WHERE `name` = '".$requestedName."'";
@@ -76,8 +68,8 @@
 	{
 		$requestedName = $_POST["userName"];
 		$updatedName = $_POST["updatedName"];
-		var_dump($requestedName);
-		var_dump($updatedName);
+		
+		
 		echo '<br>';
 		if ($requestedName != "") {
 			$update="UPDATE `user`
@@ -98,5 +90,20 @@
 		} 
 		else {echo "0 results";}
 	}	
+	
+	
+	function read($tableName,$columnName)
+	{
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName]."<br>";
+			}
+		} 
+		else {echo "0 results";}
+	}
 	
 ?>

@@ -27,6 +27,7 @@
 
 <?php
 
+
 	$conn = new mysqli("localhost","root","","crudtask");
 	
 	if(isset($_POST['add']))
@@ -37,8 +38,6 @@
 			$insert="INSERT INTO links (`physicalName` , `friendlyName`) VALUES ('$physicalName' , '$friendlyName');";
 			$result = mysqli_query($conn, $insert);	
 		}
-		
-		
 		$select="SELECT * FROM links";
 		$result = mysqli_query($conn,$select);	
 		if ($result->num_rows > 0) 
@@ -58,20 +57,11 @@
 		if ($requestedName != "") {
 			$delete="DELETE FROM `links` WHERE `physicalName` = '".$requestedName."'";
 			$result = mysqli_query($conn, $delete);	
-			echo 'deleted';
 		}
+		$tableName = "links";
+		$columnName = "physicalName";
+		read($tableName,$columnName);
 		
-		
-		$select="SELECT * FROM `links`";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {	
-				echo $row["name"]."<br>";
-			}
-		} 
-		else {echo "0 results";}
 	}	
 	
 	
@@ -101,4 +91,18 @@
 		else {echo "0 results";}
 	}	
 	
+
+	function read($tableName,$columnName)
+	{
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName]."<br>";
+			}
+		} 
+		else {echo "0 results";}
+	}
 ?>
