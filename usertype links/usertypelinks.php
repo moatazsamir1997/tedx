@@ -15,6 +15,14 @@
 		</form>	
 		
 		
+		<form method="POST" action="#">
+			<h3>Update typeLinks</h3>
+			<input type="text" name="TheTypeId" placeholder="Enter type Id here">
+			<input type="text" name="TheLinkId" placeholder="Enter link Id here">
+			<input type="text" name="TheNewTypeId" placeholder="Enter type Id here">
+			<input type="text" name="TheNewLinkId" placeholder="Enter link Id here">
+			<input type="submit" name="updateType&Links" value="update">
+		</form>	
 		
 		
 		
@@ -87,9 +95,33 @@
 		} 
 		else {echo "0 results";}
 	}
+	//............................................................
 	
+	function update($tableName)
 	
-	
+	{	if(isset($_POST['delete']))
+		{
+		$requestedLinkId = $_POST["TheLinkId"];
+		$newLinkId= $_POST["TheNewLinkId"];
+		$userTypeLinksId = $_POST["TheTypeId"];
+		$newuserTypeLinksId =	$_POST["TheNewTypeId"];
+		// var_dump($requestedLinkId);
+		// var_dump($userTypeLinksId);
+	//	echo '<br>';
+		if ($requestedLinkId != "" && $userTypeLinksId != "" ) {
+			$update="UPDATE `$tableName`
+			SET `userTypeId` = $newLinkId
+			WHERE `userTypeId` = $requestedLinkId 
+			AND 
+			SET `linkId` = '$newuserTypeLinksId'
+			WHERE `linkId` = '$userTypeLinksId' ";
+			$result = mysqli_query($conn, $update);	
+		}
+		
+		
+		
+	}
+	}
 	
 	
 	
