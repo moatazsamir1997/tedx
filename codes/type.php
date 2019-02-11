@@ -38,7 +38,7 @@
 	if(isset($_POST['add']))
 	{
 		$requestedName = $_POST["name"];
-		var_dump($requestedName);
+		
 		if ($requestedName != "") {
 			$insert="INSERT INTO usertype (`name`) VALUES ('$requestedName');";
 			$result = mysqli_query($conn, $insert);	
@@ -108,8 +108,8 @@
 	{
 		$requestedName = $_POST["typeName"];
 		$updatedName = $_POST["updatedName"];
-		var_dump($requestedName);
-		var_dump($updatedName);
+		
+		
 		echo '<br>';
 		if ($requestedName != "") {
 			$update="UPDATE `usertype`

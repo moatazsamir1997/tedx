@@ -65,7 +65,8 @@
 		$requestedLinkId = $_POST["LinkId"];
 		$userTypeLinksId = $_POST['userTypeLinksId'];
 		echo '<br>';
-		if ($userTypeLinksId != "" && $requestedLinkId != "") {
+		if ($userTypeLinksId != "" && $requestedLinkId != "") 
+		{
 			$delete="DELETE FROM `usertypelinks` WHERE `userTypeId` = '$userTypeLinksId' && `linkId` = '$requestedLinkId'";
 			$result = mysqli_query($conn, $delete);	
 			$tableName = "usertypelinks";
@@ -102,7 +103,9 @@
 		$newLinkId= $_POST["TheNewLinkId"];
 		$userTypeLinksId = $_POST["TheTypeId"];
 		$newuserTypeLinksId =	$_POST["TheNewTypeId"];
+		echo 1;
 		update("usertypelinks", $requestedLinkId , $newLinkId  , $userTypeLinksId , $newuserTypeLinksId);
+		echo 2;
 
 	}
 	function update($tableName , $requestedLinkId , $newLinkId  , $userTypeLinksId , $newuserTypeLinksId)
@@ -114,11 +117,8 @@
 			WHERE  `userTypeId` = '$userTypeLinksId'
 			AND `linkId` = '$requestedLinkId'";
 			$result = mysqli_query($GLOBALS['conn'], $update);	
-			var_dump($update);
 		}
-			
 	}
-}
 	
 	
 	
