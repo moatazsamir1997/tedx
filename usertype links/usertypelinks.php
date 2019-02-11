@@ -8,31 +8,13 @@
 		</form>	
 		
 		<form method="POST" action="#">
-			<h3>Delete IDs</h3>
-			<input type="text" name="TypeId" placeholder="Enter user Type Id here">
+			<h3>Delete a row</h3>
+			<input type="text" name="userTypeLinksId" placeholder="Enter userTypeLink Id here">
 			<input type="text" name="LinkId" placeholder="Enter user Link Id here">
 			<input type="submit" name="delete" value="delete">
 		</form>	
 		
-		<form method="POST" action="#">
-			<h3>Update user Type Id</h3>
-			<input type="text" name="TypeId" placeholder="Enter user Type Id here">
-			<input type="text" name="updatedTypeId" placeholder="Enter updated user Type Id">
-			
-			
-			<input type="submit" name="UpdateTypeId" value="update">
-		</form>	
 		
-		
-		
-		<form method="POST" action="#">
-			<h3>Update Link Id</h3>
-			<input type="text" name="LinkId" placeholder="Enter Link Id here">
-			<input type="text" name="updatedLinkId" placeholder="Enter updated Link Id">
-			
-			
-			<input type="submit" name="UpdateLinkId" value="update">
-		</form>	
 		
 		
 		
@@ -52,38 +34,18 @@
 	{
 		$requestedTypeId = $_POST["TypeId"];
 		$requestedLinkId = $_POST["LinkId"];
+
 		if ($requestedTypeId != "") 
 		{
-			$insert="INSERT INTO usertypelinks (`userTypeId` , `linkId`) VALUES ('$requestedTypeId' , requestedLinkId);";
+			$insert = 'INSERT INTO `usertypelinks` (`userTypeId`, `linkId`) VALUES ( "'.$requestedTypeId.'",  "'.$requestedLinkId.'")';
 			$result = mysqli_query($conn, $insert);	
+			
+			$tableName = "usertypelinks";
+			$columnName = "userTypeId";
+			read($tableName,$columnName);
 		}
 		
-		
-		
-		
-		$select="SELECT usertypelinks.userTypeId,
-		usertypelinks.linkId,
-		usertype.name,
-		usertype.id,
-		links.physicalName,
-		links.friendlyName,
-		links.id FROM
-		(((usertypelinks INNER JOIN usertype on
-		 usertypelinks.userTypeId = usertype.id)
-		  INNER JOIN links ON
-		   usertypelinks.linkId = links.id)";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) 
-			{
-				echo $row["name"];
-				echo $row["physicalName"];
-				echo $row["friendlyName"];	
-			}
-		} 
-		else {echo "0 results";}
+	
 	}	
 	
 	
@@ -92,106 +54,39 @@
 	
 	if(isset($_POST['delete']))
 	{
-		$requestedTypeId = $_POST["TypeId"];
 		$requestedLinkId = $_POST["LinkId"];
-		var_dump($requestedLinkId);
+		$userTypeLinksId = $_POST['userTypeLinksId'];
 		echo '<br>';
-		if ($requestedLinkId != "") {
-			$delete="DELETE FROM `user` WHERE `name` = '".$requestedLinkId."'";
+		if ($userTypeLinksId != "" && $requestedLinkId != "") {
+			$delete="DELETE FROM `usertypelinks` WHERE `userTypeId` = '$userTypeLinksId' && `linkId` = '$requestedLinkId'";
 			$result = mysqli_query($conn, $delete);	
+			$tableName = "usertypelinks";
+			$columnName = "userTypeid";
+			read($tableName,$columnName);
 		}
 		
-		
-		$select="SELECT usertypelinks.userTypeId,usertypelinks.linkId,usertype.name,usertype.id,links.physicalName,links.friendlyName,links.id FROM  (((usertypelinks INNER JOIN usertype on usertypelinks.userTypeId = usertype.id)INNER JOIN links ON usertypelinks.linkId = links.id)";;
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-
-				
-				echo $row["name"].$row["physicalName"].$row["friendlyName"]. "<br>";
-			}
-		} 
-		else {echo "0 results";}
+	
 	}	
+
 	
 	
 	
 	
 	
 	
-	//.................................................................
-	
-	
-	
-	
-	
-	
-	if(isset($_POST['UpdateTypeId']))
+	function read($tableName,$columnName)
 	{
-		$requestedTypeId = $_POST["TypeId"];
-		$UpdatedTypeId = $_POST["updatedTypeId"];
-		var_dump($requestedTypeId);
-		var_dump($UpdatedTypeId);
-		echo '<br>';
-		if ($requestedTypeId != "") {
-			$update="UPDATE `usertypelinks`
-			SET `userTypeId` = '$UpdatedTypeId'
-			WHERE `userTypeId` = '$requestedTypeId' ;";
-			$result = mysqli_query($conn, $update);	
-		}
-		
-		
-		$select="SELECT usertypelinks.userTypeId,usertypelinks.linkId,usertype.name,usertype.id,links.physicalName,links.friendlyName,links.id FROM  (((usertypelinks INNER JOIN usertype on usertypelinks.userTypeId = usertype.id)INNER JOIN links ON usertypelinks.linkId = links.id)";;
-		$result = mysqli_query($conn,$select);	
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
 		if ($result->num_rows > 0) 
 		{
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
-
-				
-				echo $row["name"].$row["physicalName"].$row["friendlyName"]. "<br>";
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName]."<br>";
 			}
 		} 
 		else {echo "0 results";}
-	}	
-	
-	
-	
-	
-	//....................................................................
-	
-	
-	
-	if(isset($_POST['UpdateLinkId']))
-	{
-		$requestedLinkId = $_POST["LinkId"];
-		$UpdatedLinkId = $_POST["updatedLinkId"];
-		var_dump($requestedLinkId);
-		var_dump($UpdatedLinkId);
-		echo '<br>';
-		if ($requestedLinkId != "") {
-			$update="UPDATE `usertypelinks`
-			SET `linkId` = '$UpdatedLinkId'
-			WHERE `linkId` = '$requestedLinkId' ;";
-			$result = mysqli_query($conn, $update);	
-		}
-		
-		
-		$select="SELECT usertypelinks.userTypeId,usertypelinks.linkId,usertype.name,usertype.id,links.physicalName,links.friendlyName,links.id FROM  (((usertypelinks INNER JOIN usertype on usertypelinks.userTypeId = usertype.id)INNER JOIN links ON usertypelinks.linkId = links.id)";;
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-
-				
-				echo $row["name"].$row["physicalName"].$row["friendlyName"]. "<br>";
-			}
-		} 
-		else {echo "0 results";}
-	}	
+	}
 	
 	
 	
