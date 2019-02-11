@@ -96,32 +96,29 @@
 		else {echo "0 results";}
 	}
 	//............................................................
-	
-	function update($tableName)
-	
-	{	if(isset($_POST['delete']))
-		{
+	if(isset($_POST['updateType&Links']))
+	{
 		$requestedLinkId = $_POST["TheLinkId"];
 		$newLinkId= $_POST["TheNewLinkId"];
 		$userTypeLinksId = $_POST["TheTypeId"];
 		$newuserTypeLinksId =	$_POST["TheNewTypeId"];
-		// var_dump($requestedLinkId);
-		// var_dump($userTypeLinksId);
-	//	echo '<br>';
-		if ($requestedLinkId != "" && $userTypeLinksId != "" ) {
-			$update="UPDATE `$tableName`
-			SET `userTypeId` = $newLinkId
-			WHERE `userTypeId` = $requestedLinkId 
-			AND 
-			SET `linkId` = '$newuserTypeLinksId'
-			WHERE `linkId` = '$userTypeLinksId' ";
-			$result = mysqli_query($conn, $update);	
+		update("usertypelinks", $requestedLinkId , $newLinkId  , $userTypeLinksId , $newuserTypeLinksId);
+
+	}
+	function update($tableName , $requestedLinkId , $newLinkId  , $userTypeLinksId , $newuserTypeLinksId)
+	{	
+		if ($requestedLinkId != "" && $userTypeLinksId != "" ) 
+		{
+			$update="UPDATE `$tableName` 
+			SET `userTypeId`='$newuserTypeLinksId',`linkId`='$newLinkId' 
+			WHERE  `userTypeId` = '$userTypeLinksId'
+			AND `linkId` = '$requestedLinkId'";
+			$result = mysqli_query($GLOBALS['conn'], $update);	
+			var_dump($update);
 		}
-		
-		
-		
+			
 	}
-	}
+}
 	
 	
 	
