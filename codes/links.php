@@ -26,28 +26,22 @@
 
 
 <?php
-
+	include('../Database_Connection.php');
+	
 
 	$conn = new mysqli("localhost","root","","crudtask");
-	
+	$tableName = "links";
 	if(isset($_POST['add']))
 	{
-		$physicalName = $_POST["physicalName"];
-		$friendlyName = $_POST["friendlyName"];
-		if ($physicalName != "") {
-			$insert="INSERT INTO links (`physicalName` , `friendlyName`) VALUES ('$physicalName' , '$friendlyName');";
-			$result = mysqli_query($conn, $insert);	
+		$arrOfValues = array($_POST['physicalName'],$_POST['friendlyName']);
+		echo "==========";var_dump($arrOfValues);echo "==========<br>";
+		$arrOfcolumnNames = array("physicalName" , "friendlyName");
+		if ($_POST["physicalName"] != "") {
+			
+			insert($conn , $GLOBALS['tableName'] , $arrOfcolumnNames ,$arrOfValues);
 		}
-		$select="SELECT * FROM links";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {	
-				echo $row["physicalName"]."  ".$row["friendlyName"]."<br>";			
-			}
-		} 
-		else {echo "0 results";}
+		echo"<br>";
+		read1($tableName,"physicalName","friendlyName");
 	}	
 	
 	if(isset($_POST['deletelink']))
@@ -101,6 +95,19 @@
 			// output data of each row
 			while($row = $result->fetch_assoc()) {	
 				echo $row[$columnName]."<br>";
+			}
+		} 
+		else {echo "0 results";}
+	}
+	function read1($tableName,$columnName1,$columnName2)
+	{
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName1]."  ".$row[$columnName2]."<br>";			
 			}
 		} 
 		else {echo "0 results";}
