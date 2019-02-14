@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2019 at 08:58 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Feb 14, 2019 at 02:23 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,21 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `address`
+--
+
+CREATE TABLE `address` (
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL,
+  `parentId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `links`
 --
 
 CREATE TABLE `links` (
   `id` int(11) NOT NULL,
   `physicalName` varchar(255) NOT NULL,
-  `friendlyName` varchar(255) NOT NULL
+  `friendlyName` varchar(255) NOT NULL,
+  `htmlCode` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `links`
 --
 
-INSERT INTO `links` (`id`, `physicalName`, `friendlyName`) VALUES
-(13, 'zahaby', 'myFriendlyName');
+INSERT INTO `links` (`id`, `physicalName`, `friendlyName`, `htmlCode`) VALUES
+(1, 'registration.php', 'register', ''),
+(2, 'ewew', 'eewew', ''),
+(3, 'ss', 'ss', '');
 
 -- --------------------------------------------------------
 
@@ -50,15 +65,9 @@ INSERT INTO `links` (`id`, `physicalName`, `friendlyName`) VALUES
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `userTypeId` int(11) NOT NULL
+  `userTypeId` int(11) NOT NULL,
+  `userAddressId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `name`, `userTypeId`) VALUES
-(24, 'jj', 16);
 
 -- --------------------------------------------------------
 
@@ -76,10 +85,14 @@ CREATE TABLE `usertype` (
 --
 
 INSERT INTO `usertype` (`id`, `name`) VALUES
-(16, 'zahaby'),
-(17, 'tarek'),
-(18, 'tarek'),
-(19, 'tarek');
+(2, 'manager@gmail.com'),
+(3, 'dddd'),
+(4, 'mohamed'),
+(5, 'manager'),
+(6, 'mohamed'),
+(7, 'doctor'),
+(8, 'sasss'),
+(9, 'ssass');
 
 -- --------------------------------------------------------
 
@@ -98,11 +111,18 @@ CREATE TABLE `usertypelinks` (
 --
 
 INSERT INTO `usertypelinks` (`id`, `userTypeId`, `linkId`) VALUES
-(1, 17, 13);
+(48, 3, 3);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `address`
+--
+ALTER TABLE `address`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `parentId` (`parentId`);
 
 --
 -- Indexes for table `links`
@@ -115,7 +135,8 @@ ALTER TABLE `links`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `userTypeId` (`userTypeId`);
+  ADD KEY `userTypeId` (`userTypeId`),
+  ADD KEY `userAddressId` (`userAddressId`);
 
 --
 -- Indexes for table `usertype`
@@ -136,38 +157,51 @@ ALTER TABLE `usertypelinks`
 --
 
 --
+-- AUTO_INCREMENT for table `address`
+--
+ALTER TABLE `address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usertype`
 --
 ALTER TABLE `usertype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usertypelinks`
 --
 ALTER TABLE `usertypelinks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `address`
+--
+ALTER TABLE `address`
+  ADD CONSTRAINT `address_ibfk_1` FOREIGN KEY (`parentId`) REFERENCES `address` (`id`);
+
+--
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`userTypeId`) REFERENCES `usertype` (`id`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`userTypeId`) REFERENCES `usertype` (`id`),
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`userAddressId`) REFERENCES `address` (`id`);
 
 --
 -- Constraints for table `usertypelinks`
