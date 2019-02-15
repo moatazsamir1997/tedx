@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<body>
 		<form method="POST" action="#">
@@ -98,5 +99,9 @@
 		} 
 		else {echo "0 results";}
 	}	
+
+	
 	
 ?>
+
+

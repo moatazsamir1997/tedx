@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<body>
 		<form method="POST" action="#">
@@ -33,9 +34,24 @@
 	{
 		$physicalName = $_POST["physicalName"];
 		$friendlyName = $_POST["friendlyName"];
+		
+		$doc = new DOMDocument();
+		$doc->loadHTMLFile("user.php");
+		$htmlCode = $doc->saveHTML();
+		// var_dump($htmlCode = file_get_contents('user.php'));
 		if ($physicalName != "") {
-			$insert="INSERT INTO links (`physicalName` , `friendlyName`) VALUES ('$physicalName' , '$friendlyName');";
+			$insert="INSERT INTO links (`physicalName` , `friendlyName`, `htmlCode`) VALUES ('$physicalName' , '$friendlyName' , '$htmlCode');";
 			$result = mysqli_query($conn, $insert);	
+			if (mysqli_connect_errno())
+			{
+			echo "Failed to connect to MySQL: " . mysqli_connect_error();
+			}
+
+			// Perform a query, check for error
+			if (!$result)
+			{
+				echo("Error description: " . mysqli_error($con));
+			}
 		}
 		
 		
