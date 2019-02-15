@@ -27,11 +27,14 @@
 
 
 <?php
+	include('../Database_Connection.php');
+	
 
 	$conn = new mysqli("localhost","root","","crudtask");
-	
+	$tableName = "links";
 	if(isset($_POST['add']))
 	{
+<<<<<<< HEAD
 		$physicalName = $_POST["physicalName"];
 		$friendlyName = $_POST["friendlyName"];
 		
@@ -52,19 +55,17 @@
 			{
 				echo("Error description: " . mysqli_error($con));
 			}
+=======
+		$arrOfValues = array($_POST['physicalName'],$_POST['friendlyName']);
+		echo "==========";var_dump($arrOfValues);echo "==========<br>";
+		$arrOfcolumnNames = array("physicalName" , "friendlyName");
+		if ($_POST["physicalName"] != "") {
+			
+			insert($conn , $GLOBALS['tableName'] , $arrOfcolumnNames ,$arrOfValues);
+>>>>>>> foad
 		}
-		
-		
-		$select="SELECT * FROM links";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {	
-				echo $row["physicalName"]."  ".$row["friendlyName"]."<br>";			
-			}
-		} 
-		else {echo "0 results";}
+		echo"<br>";
+		read1($tableName,"physicalName","friendlyName");
 	}	
 	
 	if(isset($_POST['deletelink']))
@@ -74,20 +75,11 @@
 		if ($requestedName != "") {
 			$delete="DELETE FROM `links` WHERE `physicalName` = '".$requestedName."'";
 			$result = mysqli_query($conn, $delete);	
-			echo 'deleted';
 		}
+		$tableName = "links";
+		$columnName = "physicalName";
+		read($tableName,$columnName);
 		
-		
-		$select="SELECT * FROM `links`";
-		$result = mysqli_query($conn,$select);	
-		if ($result->num_rows > 0) 
-		{
-			// output data of each row
-			while($row = $result->fetch_assoc()) {	
-				echo $row["name"]."<br>";
-			}
-		} 
-		else {echo "0 results";}
 	}	
 	
 	
@@ -117,4 +109,35 @@
 		else {echo "0 results";}
 	}	
 	
+<<<<<<< HEAD
 ?>
+=======
+
+	function read($tableName,$columnName)
+	{
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName]."<br>";
+			}
+		} 
+		else {echo "0 results";}
+	}
+	function read1($tableName,$columnName1,$columnName2)
+	{
+		$select="SELECT * FROM `$tableName`";
+		$result = mysqli_query($GLOBALS['conn'] ,$select);	
+		if ($result->num_rows > 0) 
+		{
+			// output data of each row
+			while($row = $result->fetch_assoc()) {	
+				echo $row[$columnName1]."  ".$row[$columnName2]."<br>";			
+			}
+		} 
+		else {echo "0 results";}
+	}
+?>
+>>>>>>> foad
