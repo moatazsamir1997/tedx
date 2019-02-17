@@ -1,3 +1,28 @@
+<?php 
+include('Database_Connection.php');
+ if (isset($_POST['submit'])) 
+ {
+    if (isset($_POST['editor']) && !empty($_POST['editor'])) 
+    {
+        $content = $_POST['editor'];
+    }    
+    else
+     {
+        $empty_error = '<b class="text-danger text-center>Please fill the textarea<b>';
+    }
+    if (isset($content) && !empty($content))
+     {
+        $insert_q = "insert into `links` (htmlCode) values('$content')";
+        if (mysqli_query($conn, $insert_q))
+         {
+                
+        }
+        else {
+            $submit_error = '<b class="text-danger text-center">You are not able to submit. please try again</b>';
+        }
+    }
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +38,9 @@
     <form action="" method="post" enctype="multipart/form-data">
 
                 <textarea class="ckeditor" name="editor"></textarea>
+
+                <br>
+                <button type="submit" name="submit" class="btn btn-success"><span class="fa fa-save"></span></button>
 
     </form>
 </body>
