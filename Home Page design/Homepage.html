@@ -9,6 +9,7 @@
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"> </script> 
 
 
 	
@@ -32,6 +33,8 @@
 			</ul>
 			<br><br>
 			<hr>
+			
+<div id="container"></div> 
 		</div>
 	</header>
 
@@ -95,4 +98,14 @@
 	</div>
 		
 </body>
+<script> 
+	var paper = Raphael("container", 500, 300); 
+	var dot = paper.circle(250, 150, 30).attr({ 
+	fill: "#FFF", 
+	stroke: "#000", 
+	"stroke-width": 1 
+	}); 
+	</script>
+	
+ 
 </html>
