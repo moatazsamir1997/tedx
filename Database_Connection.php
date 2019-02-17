@@ -13,21 +13,7 @@
     }
 
 
-<<<<<<< HEAD
-
-
-    echo enterArgumentsAsUWant(array("a way to ", "enter arguments as many as u want in form of array"));
-
-
-	function enterArgumentsAsUWant($var)
-	{
-		foreach ($var as $key) {
-			echo "<br>".$key."<br>";
-		}
-	}
-
-=======
-    function insert($conn , $tableName , $arrOfcolumnNames ,$arrOfValues)
+    static function insert($conn , $tableName , $arrOfcolumnNames ,$arrOfValues)
     {
         
         $SqlStringOfColumnNames = arrToString($arrOfcolumnNames, "`" , "," , TRUE);
@@ -68,6 +54,5 @@
         }
 		return $myString;
     }
->>>>>>> foad
 ?>
 
