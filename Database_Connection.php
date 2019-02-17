@@ -13,9 +13,8 @@
     }
 
 
-    static function insert($conn , $tableName , $arrOfcolumnNames ,$arrOfValues)
+    function insert($conn , $tableName , $arrOfcolumnNames ,$arrOfValues)
     {
-        
         $SqlStringOfColumnNames = arrToString($arrOfcolumnNames, "`" , "," , TRUE);
         $SqlStringOfvalues = arrToString($arrOfValues, "'" , "," , FALSE);
         $insert="INSERT INTO $tableName ($SqlStringOfColumnNames) VALUES ($SqlStringOfvalues);";
