@@ -5,6 +5,9 @@
 	
 }
 
+
+
+
 header{
 	
 		background-image: url(black.jpg); /* IMAGE */
@@ -14,7 +17,10 @@ header{
 		background-position:center;
 	
 }
-
+#particles-js{
+	background:firebrick;
+	height:400px;
+}
 
 ul{
 	
