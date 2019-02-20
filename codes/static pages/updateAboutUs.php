@@ -1,5 +1,23 @@
 <?php 
 include('Database_Connection.php');
+
+if ($_GET['id'])
+{
+    $id =$_GET['id'];
+    $query="select * from `links` where id='$id'";
+    $result= mysqli_query($conn,$query);
+    
+    if (mysqli_num_rows($result)>0) 
+    {
+        while ($row=mysqli_fetch_assoc($result))
+        {
+            $content=$row['htmlCode'];
+        }
+    }
+    else {
+        header('Location: writing About Us.php');
+    }
+}
  if (isset($_POST['submit'])) 
  {
     if (isset($_POST['editor']) && !empty($_POST['editor'])) 
@@ -12,7 +30,7 @@ include('Database_Connection.php');
     }
     if (isset($content) && !empty($content))
      {
-        $insert_q = "insert into `links` (htmlCode) values('$content') ";
+        $insert_q = "update `links` set htmlCode ='$content' WHERE id='$id' ";
         if (mysqli_query($conn, $insert_q))
          {
                 
@@ -41,10 +59,15 @@ include('Database_Connection.php');
     <a class="btn btn-success" href="Writing About Us.php">Writing</a>
     <a class="btn btn-success" href="About Us.php">Displaying</a>
     <br><br>
+    <?php    if (isset($submit_error)) echo $submit_error;  ?>
+    <?php    if (isset($empty_error)) echo $empty_error;  ?>
     
+
     <form action="" method="post" enctype="multipart/form-data">
 
-                <textarea class="ckeditor" name="editor"></textarea>
+                <textarea class="ckeditor" name="editor"><?php 
+                if (isset($content)) echo $content;
+                ?></textarea>
 
                 <br>
                 <button type="submit" name="submit" class="btn btn-success"><span class="fa fa-save"></span></button>
