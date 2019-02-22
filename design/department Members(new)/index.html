@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta name="description" content="This is Home.">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Yatra One' rel='stylesheet'>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="master.css">
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+  
+  <div id="main">
+<div class="bar">
+
+</div>
+    <br><br><br>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+
+     
+    
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+
+    <!--    MAIN (Center website) -->
+    <div class="main">
+
+
+      <hr>
+
+
+
+        <!--<div id="info">
+         <div class="info-wrapper">
+     <a href="http://www.queness.com/post/14577/create-a-simple-responsive-portfolio-page-with-filtering-and-hover-effect"><b>The Categories</b></a>
+
+        </div>
+      </div>-->
+
+      <div class="container">
+
+        <ul id="filters" class="clearfix">
+          <li><span class="filter " data-filter=".nArrivals,.sale ,.popular">All</span></li>
+          <li><span class="filter active" data-filter=".sale">Sale</span></li>
+          <li><span class="filter" data-filter=".nArrivals">New Arrivals</span></li>
+          <li><span class="filter" data-filter=".popular ">Popular</span></li>
+
+        </ul>
+
+        <div id="portfoliolist">
+
+          <div class="portfolio logo" data-cat="logo">
+
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/5.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Bird Document</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div id="portfoliolist">
+          <div class="portfolio sale" data-cat="sale">
+
+            <div class="portfolio-wrapper">
+
+              <a href="Buy.html"><img src="1.jpg" alt="" /></a>
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">T-shirt 1</a>
+                  <span class="text-category">Kids</span>
+                </div>
+
+                <div class="label-bg"></div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio web" data-cat="web">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/web/4.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Sonor's Design</a>
+                  <span class="text-category">Web design</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio web" data-cat="web">
+            <div class="portfolio-wrapper">
+              <img src="1.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a href="#" class="text-title">T-shirt</a>
+                  <a class="text-category">Web design</a>
+
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio  nArrivals" data-cat=" nArrivals">
+            <div class="portfolio-wrapper">
+              <img src="1.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Typography Company</a>
+                  <span class="text-category">Business  nArrivals</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio sale" data-cat="sale">
+            <div class="portfolio-wrapper">
+              <img src="3.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">T-shirt 2</a>
+                  <span class="text-category">Men</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio  nArrivals" data-cat=" nArrivals">
+            <div class="portfolio-wrapper">
+              <img src="4.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">BMF</a>
+                  <span class="text-category">Business  nArrivals</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio  nArrivals" data-cat=" nArrivals">
+            <div class="portfolio-wrapper">
+              <img src="5.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Techlion</a>
+                  <span class="text-category">Business  nArrivals</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/1.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">KittyPic</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio sale" data-cat="sale">
+            <div class="portfolio-wrapper">
+              <img src="2.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">T-Shirt 3</a>
+                  <span class="text-category">Women</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio  nArrivals" data-cat=" nArrivals">
+            <div class="portfolio-wrapper">
+              <img src="2.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">QR Quick Response</a>
+                  <span class="text-category">Business  nArrivals</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/6.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Mobi Sock</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/7.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Village Community </a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio popular" data-cat="popular">
+            <div class="portfolio-wrapper">
+              <img src=" 4.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Domino's Pizza</a>
+                  <span class="text-category">popular</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio web" data-cat="web">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/web/3.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Backend Admin</a>
+                  <span class="text-category">Web design</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio popular" data-cat="popular">
+            <div class="portfolio-wrapper">
+              <img src=" 1.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Instagram</a>
+                  <span class="text-category">popular</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio web" data-cat="web">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/web/2.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Student Guide</a>
+                  <span class="text-category">Web design</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio popular" data-cat="popular">
+            <div class="portfolio-wrapper">
+              <img src=" 2.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Scoccer</a>
+                  <span class="text-category">popular</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio popular" data-cat="popular">
+            <div class="portfolio-wrapper">
+              <img src=" 5.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">3D Map</a>
+                  <span class="text-category">popular</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio web" data-cat="web">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/web/1.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Note</a>
+                  <span class="text-category">Web design</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/3.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Native Designers</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/4.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Bookworm</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio popular" data-cat="popular">
+            <div class="portfolio-wrapper">
+              <img src=" 3.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Sandwich</a>
+                  <span class="text-category">popular</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio  nArrivals" data-cat=" nArrivals">
+            <div class="portfolio-wrapper">
+              <img src=" 3.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Reality</a>
+                  <span class="text-category">Business  nArrivals</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio logo" data-cat="logo">
+            <div class="portfolio-wrapper">
+              <img src="img/portfolios/logo/2.jpg" alt="" />
+              <div class="label">
+                <div class="label-text">
+                  <a class="text-title">Speciallisterne</a>
+                  <span class="text-category">Logo</span>
+                </div>
+                <div class="label-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div><!-- container -->
+
+    </div>
+
+    <!--   <h2 class="headers-lists">Sale</h2>
+
+<div id="myBtnContainer">
+
+  <button class="btn active" onclick="filterSelection('mSale')">Men</button>
+  <button class="btn2" onclick="filterSelection('wSale')">Women</button>
+  <button class="btn3" onclick="filterSelection('kSale')">Kids</button>
+</div>
+
+ Portfolio Gallery Grid
+<div class="row">
+  <div class="column mSale">
+    <div class="content">
+      <img src="3.jpg" alt="Mountains" style="width:100%">
+      <h4>Jeans</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column mSale">
+    <div class="content">
+    <img src="3.jpg" alt="Lights" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column mSale">
+    <div class="content">
+    <img src="3.jpg" alt="Nature" style="width:100%">
+      <h4>Shirt</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column wSale">
+    <div class="content">
+      <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column wSale">
+    <div class="content">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column wSale">
+    <div class="content">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column kSale">
+    <div class="content">
+      <img src="3.jpg" alt="Car"  style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column kSale">
+    <div class="content">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column kSale">
+    <div class="content">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Kids</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+       END GRID
+</div>
+<h2 class="headers-lists">New Arrivals</h2>
+<div id="myBtnContainer2">
+  <button class="btn2 active" onclick="filterSelection('mArrivals')">Men</button>
+  <button class="btn2" onclick="filterSelection('wArrivals')">Women</button>
+  <button class="btn2w" onclick="filterSelection('kArrivals')">Kids</button>
+</div>
+
+ Portfolio Gallery Grid
+<div class="row">
+  <div class="column2 mArrivals">
+    <div class="content2">
+      <img src="3.jpg" alt="Mountains" style="width:100%">
+      <h4>Jeans</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 mArrivals">
+    <div class="content2">
+    <img src="3.jpg" alt="Lights" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 mArrivals">
+    <div class="content">
+    <img src="3.jpg" alt="Nature" style="width:100%">
+      <h4>Shirt</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column2 wArrivals">
+    <div class="content2">
+      <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 wArrivals">
+    <div class="content2">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 wArrivals">
+    <div class="content2">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column2 kArrivals">
+    <div class="content2">
+      <img src="3.jpg" alt="Car"  style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 kArrivals">
+    <div class="content2">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column2 kArrivals">
+    <div class="content2">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Kids</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+ END GRID
+</div>
+<h2 class="headers-lists">Popular</h2>
+<div id="myBtnContainer3">
+  <button class="btn3 active" onclick="filterSelection('mPopular')">Men</button>
+  <button class="btn3" onclick="filterSelection('wPopular')">Women</button>
+  <button class="btn3" onclick="filterSelection('kPopular')">Kids</button>
+</div>
+
+  Portfolio Gallery Grid
+<div class="row">
+  <div class="column3 mPopular">
+    <div class="content3">
+      <img src="3.jpg" alt="Mountains" style="width:100%">
+      <h4>Jeans</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 mPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Lights" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 mPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Nature" style="width:100%">
+      <h4>Shirt</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column3 wPopular">
+    <div class="content3">
+      <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 wPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 wPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column3 kPopular">
+    <div class="content3">
+      <img src="3.jpg" alt="Car"  style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 kPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Boots</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column3 kPopular">
+    <div class="content3">
+    <img src="3.jpg" alt="Car" style="width:100%">
+      <h4>Kids</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+   END GRID
+</div>
+
+
+    END MAIN-->
+  </div>
+
+  </div>
+  <footer>
+<h2 style="text-align: center;">About Us</h2>
+<br>
+<div >
+ <div style="margin:20px;" class="boxed">
+<b style="font-size:15px;font-color:black;">War. War never changes.
+Since the dawn of human kind, when our ancestors first discovered the killing power of rock and bone, blood has been spilled in the name of everything: from God to justice to simple, psychotic rage.
+In the year 2077, after millennia of armed conflict, the destructive nature of man could sustain itself no longer. The world was plunged into an abyss of nuclear fire and radiation.
+But it was not, as some had predicted, the end of the world. Instead, the apocalypse was simply the prologue to another bloody chapter of human history. For man had succeeded in destroying the world – but war, war never changes.
+</b>
+
+</div>
+</div>
+<!-- Pop up html-->
+
+  </footer>
+  <script src="script.js">
+  </script>
+
+</body>
+
+</html>
