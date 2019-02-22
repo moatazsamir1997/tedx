@@ -6,11 +6,15 @@ require('app/dependencies/PDOConnection.php');
 
 class Controller
 {
-	private $instance = new DB_Connect(); 
+	private $instance;
 
+	public function __construct()
+	{
+		return $this->instance = new DB_Connect(); 
+	}
 	public function getInstance()
 	{
-		return $this->instance;
+		return $this->instance; 
 	}
 
 	public function getController($controllerName)
@@ -37,9 +41,10 @@ class Controller
 		
 	}
 
-	public function putQuatations($var , $quotation)
+	public function quotations($var)
 	{
-		$this->instance->quote(($var , $quotation));
+		$myreturn = $this->instance->quote($var);
+		return $myreturn;
 	}
 
 }
