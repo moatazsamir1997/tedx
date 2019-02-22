@@ -34,6 +34,8 @@
 	$tableName = "links";
 	if(isset($_POST['add']))
 	{
+<<<<<<< HEAD
+		$physicalName = $_POST["physicalName"];
 		$friendlyName = $_POST["friendlyName"];
 		
 		$doc = new DOMDocument();
@@ -53,13 +55,17 @@
 			{
 				echo("Error description: " . mysqli_error($con));
 			}
+=======
 		$arrOfValues = array($_POST['physicalName'],$_POST['friendlyName']);
+		echo "==========";var_dump($arrOfValues);echo "==========<br>";
 		$arrOfcolumnNames = array("physicalName" , "friendlyName");
 		if ($_POST["physicalName"] != "") {
 			
 			insert($conn , $GLOBALS['tableName'] , $arrOfcolumnNames ,$arrOfValues);
+>>>>>>> foad
 		}
 		echo"<br>";
+		read1($tableName,"physicalName","friendlyName");
 	}	
 	
 	if(isset($_POST['deletelink']))
@@ -103,6 +109,9 @@
 		else {echo "0 results";}
 	}	
 	
+<<<<<<< HEAD
+?>
+=======
 
 	function read($tableName,$columnName)
 	{
@@ -130,5 +139,5 @@
 		} 
 		else {echo "0 results";}
 	}
-}
 ?>
+>>>>>>> foad
