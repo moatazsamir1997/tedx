@@ -1,48 +1,30 @@
-
-
-<!DOCTYPE html>
-<html>
-	<body>
-		<form method="POST" action="#">
-			<h3>Add user</h3>
-			<input type="text" name="name" placeholder="Enter username here">
-			<input type="submit" name="add" value="insert">
-		</form>	
-		
-		<form method="POST" action="#">
-			<h3>Delete user</h3>
-			<input type="text" name="userName" placeholder="Enter username here">
-			<input type="submit" name="deleteAccount" value="delete">
-		</form>	
-		
-		<form method="POST" action="#">
-			<h3>Update user</h3>
-			<input type="text" name="userName" placeholder="Enter username here">
-			<input type="text" name="updatedName" placeholder="Enter updated Name">
-			<input type="submit" name="updateAccount" value="update">
-		</form>	
-		
-	</body>
-</html>
-
-
 <?php
 
-	$conn = new mysqli("localhost","root","","crudtask");
-	
-	if(isset($_POST['add']))
+include('Controller.php');
+include('UserModel.php');
+
+class UserController
+{
+	private $id;
+	private $fname;
+	private $lname;
+	private $genderId; 
+	private $userTypeId; 
+	private $userAddressId;
+	private $User = new UserModel();
+
+	public function addUser($request)
 	{
-		$requestedName = $_POST["name"];
-		var_dump($requestedName);
-		if ($requestedName != "") {
-			$insert="INSERT INTO `user`(`name`, `userTypeId`, `userAddressId`) VALUES ('$requestedName',16 , 10);";
-			$result = mysqli_query($conn, $insert);	
-		}
+		$this->fname = $request['fname'];
+		$this->lname = $request['lname'];
+		$this->genderId = $request['genderId'];
+		$this->userAddressId = $request['userAddressId'];
+
+		$Users = $this->User->store($request);
+
+		$this->config->view('UserView');
 		
-		$tableName = "user";
-		$columnName = "name";
-		read($tableName,$columnName);
-	}	
+	}
 	
 	if(isset($_POST['deleteAccount']))
 	{
@@ -112,4 +94,4 @@
 		else {echo "0 results";}
 	}
 	
-?>
+}
