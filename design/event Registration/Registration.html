@@ -60,29 +60,31 @@
 
       <form  action="index.html" method="post">
       
-        <h1>Sign Up</h1>
-        
+        <h1>Registration</h1>
+        <h1>Personal Information I معلومات شخصية</h1>
         <fieldset>
           <legend><span class="number">1</span>Your basic info</legend>
-          <label for="name">Name:</label>
+          <label for="name">Full Name I الاسم بالكامل:</label>
           <input type="text" id="name" name="user_name">
           
-          <label for="mail">Email:</label>
+          
+
+          <label for="mail">Email I البريد الإلكترونى:</label>
           <input type="email" id="mail" name="user_email">
           
           <label for="password">Password:</label>
           <input type="password" id="password" name="user_password">
           
+          <label>Gender I النوع:</label>
+          <input type="radio" id="Male" value="Male" name="user_gender"><label for="Male" class="light">Male</label><br>
+          <input type="radio" id="Female" value="Female" name="user_gender"><label for="Female" class="light">Female</label>
+
           <label>Age:</label>
           <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Under 13</label><br>
           <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">13 or older</label>
         </fieldset>
         
-        <fieldset>
-          <legend><span class="number">2</span>Your profile</legend>
-          <label for="bio">Biography:</label>
-          <textarea id="bio" name="user_bio"></textarea>
-        </fieldset>
+        
         <fieldset>
         <label for="job">Job Role:</label>
         <select id="job" name="user_job">
@@ -118,6 +120,44 @@
         <button type="submit">Sign Up</button>
       </form>
       
+
+
+
+      <form class="Knowledge"  action="index.html" method="post">
+      
+        
+        <h1>General Knowledge I معلومات عامة</h1>
+        <fieldset>
+          <legend><span class="number">1</span>Your Knowledge</legend>
+          <label for="name">What do you know about TED/ TEDx? I ماذا تعرف عن تيد\تيدكس؟:</label>
+          <input type="text" id="Knowledge" name="Knowledge">
+          <br><br>
+          <legend><span class="number">2</span>Your attended</legend>
+          <label>Have you ever attended a TED/ TEDx event? I هل سبق لك أن حضرت مؤتمر تيد\تيدكس ؟:</label>
+          <input type="radio" id="Yes" value="Yes" name="attended"><label for="Yes" class="light">Yes</label><br>
+          <input type="radio" id="No" value="No" name="attended"><label for="No" class="light">No</label>
+          <br><br>
+          <fieldset>
+            <legend><span class="number">3</span>why TEDxManaratAlFaroukSchool</legend>
+            <label for="bio">Why do you want to attend TEDxManaratAlFaroukSchool '18 event "Dimensions"? I لماذا تريد حضور مؤتمرنا ؟:</label>
+            <textarea id="Why" name="Why"></textarea>
+            <br><br>
+            <label>How did you know about us? I كيف علمت عنا؟:</label>
+          <input type="radio" id="Facebook" value="Facebook" name="know"><label for="Facebook" class="light">Facebook</label><br>
+          <input type="radio" id="Friends" value="Friends" name="know"><label for="Friends" class="light">Friends</label><br>
+          <input type="radio" id="Family" value="Family" name="know"><label for="Family" class="light">Family</label><br>
+          <input type="radio" id="Instagram" value="Instagram" name="know"><label for="Instagram" class="light">Instagram</label><br>
+          <input type="radio" id="Youtube" value="Youtube" name="know"><label for="Youtube" class="light">Youtube</label><br>
+          <input type="radio" id="other" value="other" name="know"><label for="other" class="light">other</label>
+
+          </fieldset>
+          <fieldset>
+            <br><br>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+
 
     
      <!--footer-->
