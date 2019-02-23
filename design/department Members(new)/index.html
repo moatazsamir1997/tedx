@@ -21,18 +21,62 @@
 
 <body>
 
-  
+  <!-- Side Nav-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <button class="dropdown-btn">Events
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Old</a>
+      <a href="#">Best</a>
+      <a href="#">New</a>
+    </div>
+    <button class="dropdown-btn">News
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Tedx</a>
+      <a href="#">World</a>
+      <a href="#">Country</a>
+    </div>
+
+  </div>
+
   <div id="main">
 <div class="bar">
 
+
+  <a href="#" style="onclick="openNav()""> <span style="font-size:30px;cursor:pointer;color: black; padding: 10px;" onclick="openNav()">&#9776;</span></a>
+    <a href="index.html" ><span style="font-size:30px;cursor:pointer; color: black; padding: 10px;">Home</span></a>
+  <span style="font-size:30px;  padding: 10px;padding-right:750px"></span></a>
+      <a href="Profile.html" id="hideIt"><span style="font-size:30px;cursor:pointer;color: black; padding: 10px;">Events</span></a>
+      <a href="Profile.html" id="hideIt2"><span style="font-size:30px;cursor:pointer;color: black; padding: 10px;">News</span></a>
+      <a href="Profile.html" id="hideIt3"><span style="font-size:30px;cursor:pointer;color: black; padding: 10px;">Profile</span></a>
 </div>
     <br><br><br>
+    <h2 class="SlideShow-Title">Members of the week</h2>
     <div class="slideshow-container">
 
       <div class="mySlides fade">
 
-     
-    
+        <img class="object-fit-cover" src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="Mountains" style="height:500px">
+        <div class="text">1st</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img class="object-fit-cover" src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="Mountains" style="height:500px">
+        <div class="text">Second</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img class="object-fit-cover" src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="Mountains" style="height:500px">
+        <div class="text">Third</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
     </div>
     <br>
 
@@ -73,7 +117,7 @@
           <div class="portfolio logo" data-cat="logo">
 
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/5.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Bird Document</a>
@@ -91,7 +135,7 @@
 
             <div class="portfolio-wrapper">
 
-              <a href="Buy.html"><img src="1.jpg" alt="" /></a>
+              <a href="Buy.html"><img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" /></a>
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">T-shirt 1</a>
@@ -106,7 +150,7 @@
 
           <div class="portfolio web" data-cat="web">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/web/4.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Sonor's Design</a>
@@ -118,7 +162,7 @@
           </div>
           <div class="portfolio web" data-cat="web">
             <div class="portfolio-wrapper">
-              <img src="1.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a href="#" class="text-title">T-shirt</a>
@@ -131,7 +175,7 @@
           </div>
           <div class="portfolio  nArrivals" data-cat=" nArrivals">
             <div class="portfolio-wrapper">
-              <img src="1.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Typography Company</a>
@@ -144,7 +188,7 @@
 
           <div class="portfolio sale" data-cat="sale">
             <div class="portfolio-wrapper">
-              <img src="3.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">T-shirt 2</a>
@@ -157,7 +201,7 @@
 
           <div class="portfolio  nArrivals" data-cat=" nArrivals">
             <div class="portfolio-wrapper">
-              <img src="4.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">BMF</a>
@@ -170,7 +214,7 @@
 
           <div class="portfolio  nArrivals" data-cat=" nArrivals">
             <div class="portfolio-wrapper">
-              <img src="5.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Techlion</a>
@@ -183,7 +227,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/1.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">KittyPic</a>
@@ -196,7 +240,7 @@
 
           <div class="portfolio sale" data-cat="sale">
             <div class="portfolio-wrapper">
-              <img src="2.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">T-Shirt 3</a>
@@ -209,7 +253,7 @@
 
           <div class="portfolio  nArrivals" data-cat=" nArrivals">
             <div class="portfolio-wrapper">
-              <img src="2.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">QR Quick Response</a>
@@ -222,7 +266,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/6.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Mobi Sock</a>
@@ -235,7 +279,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/7.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Village Community </a>
@@ -248,7 +292,7 @@
 
           <div class="portfolio popular" data-cat="popular">
             <div class="portfolio-wrapper">
-              <img src=" 4.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Domino's Pizza</a>
@@ -261,7 +305,7 @@
 
           <div class="portfolio web" data-cat="web">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/web/3.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Backend Admin</a>
@@ -274,7 +318,7 @@
 
           <div class="portfolio popular" data-cat="popular">
             <div class="portfolio-wrapper">
-              <img src=" 1.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Instagram</a>
@@ -287,7 +331,7 @@
 
           <div class="portfolio web" data-cat="web">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/web/2.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Student Guide</a>
@@ -300,7 +344,7 @@
 
           <div class="portfolio popular" data-cat="popular">
             <div class="portfolio-wrapper">
-              <img src=" 2.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Scoccer</a>
@@ -313,7 +357,7 @@
 
           <div class="portfolio popular" data-cat="popular">
             <div class="portfolio-wrapper">
-              <img src=" 5.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">3D Map</a>
@@ -326,7 +370,7 @@
 
           <div class="portfolio web" data-cat="web">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/web/1.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Note</a>
@@ -339,7 +383,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/3.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Native Designers</a>
@@ -352,7 +396,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/4.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Bookworm</a>
@@ -365,7 +409,7 @@
 
           <div class="portfolio popular" data-cat="popular">
             <div class="portfolio-wrapper">
-              <img src=" 3.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Sandwich</a>
@@ -378,7 +422,7 @@
 
           <div class="portfolio  nArrivals" data-cat=" nArrivals">
             <div class="portfolio-wrapper">
-              <img src=" 3.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Reality</a>
@@ -391,7 +435,7 @@
 
           <div class="portfolio logo" data-cat="logo">
             <div class="portfolio-wrapper">
-              <img src="img/portfolios/logo/2.jpg" alt="" />
+              <img src="https://image.tmdb.org/t/p/original/smgTZX7xKCcWmWoetS9k8vt3mrn.jpg" alt="" />
               <div class="label">
                 <div class="label-text">
                   <a class="text-title">Speciallisterne</a>
