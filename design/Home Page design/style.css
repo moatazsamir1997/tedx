@@ -10,13 +10,16 @@
 
 header{
 	
-	
 		background-image: url(black.jpg); /* IMAGE */
 		background-color:black;
 		background-size:cover;	
 		height:150vh;
 		background-position:center;
 	
+}
+#particles-js{
+	background:firebrick;
+	height:400px;
 }
 
 ul{
