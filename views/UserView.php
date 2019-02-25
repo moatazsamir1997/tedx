@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<form method="POST" action="#">
+		<form method="POST" action="<?php $GLOBALS['crud'].$GLOBALS['user']; ?>">
 			<h3>Add user</h3>
 			<input type="text" name="name" placeholder="Enter username here">
 			<input type="submit" name="add" value="insert">
@@ -25,3 +25,5 @@
 </html>
 
 
+<?php echo "$crud.$user";
+?>

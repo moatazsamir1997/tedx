@@ -30,7 +30,6 @@ class UserModel
    		// $lname = filter_var($request['lname'], FILTER_SANITIZE_STRING);
    		$fname = $request['fname'];
 		$lname = $request['lname'];
-		var_dump($request);
 		
    		$query = $User->query("INSERT INTO `User` (`fname`,`lname`) VALUES ('$fname','$lname')");
    }

@@ -14,7 +14,7 @@ class DB_Connect
      */
     static private $PDOInstance; 
 
-    private $dsn = 'mysql:host=localhost;dbname=crudTask';
+    private $dsn = 'mysql:host=localhost;dbname=user';
     private $username = "root";
     private $password = "";
      
