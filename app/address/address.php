@@ -4,7 +4,7 @@
 $con = new mysqli("localhost", "root", "","crudtask");
 
 
-}
+
 class Address
 {
 
@@ -31,6 +31,7 @@ getAddress($addressId);
   }
 
 }
+}
 
 
 
@@ -40,6 +41,15 @@ getAddress($addressId);
  <form  method="post">
 
 
+        <h3>Add address</h3>
+        <select>
+  <option value="egypt">Egypt</option>
+</select> 
+<select>
+  <option value="cairo">Cairo</option>
+  <option value="alexandria">Alexandria</option>
+</select> 
+      
 
 
 
