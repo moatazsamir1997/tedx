@@ -1,7 +1,7 @@
 <?php
 
 
-$con = new mysqli("localhost", "root", "","web-ex");
+$con = new mysqli("localhost", "root", "","crudtask");
 
 
 }
