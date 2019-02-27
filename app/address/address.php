@@ -42,6 +42,7 @@ getAddress($addressId);
 
 
         <h3>Add address</h3>
+        <form action="" method="post">
         <select>
   <option value="egypt">Egypt</option>
 </select> 
@@ -49,8 +50,10 @@ getAddress($addressId);
   <option value="cairo">Cairo</option>
   <option value="alexandria">Alexandria</option>
 </select> 
-      
+
+      <input type="text" placeholder="enter street name">
+
+</form>
+        
 
 
-
- </form>
