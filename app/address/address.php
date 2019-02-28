@@ -80,12 +80,14 @@ function getAddressInfo($address)
 <?php
 
 $address= new Address;
-print_r($address->getAddressInfo(11));
+print_r($address->getAddressInfo( ));
+
 if(isset($_POST['submit']))
 {
 $address->name= $_POST['streetName'];
 $address->parentId=$_POST['city'];
-$address->insert($address);
+echo '<br>';
+//$address->insert($address);
 var_dump($address);
 echo "<br>";
 echo $_POST['streetName']."<br>".$_POST['city'];
