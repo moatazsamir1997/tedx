@@ -21,7 +21,7 @@ form {
 
 .Knowledge{
   max-width: 475px;
-  max-height: 1200px;
+  max-height: 1150px;
   margin: 10px auto;
   padding: 10px 20px;
   background: #f4f7f8;
@@ -280,7 +280,7 @@ h4{
 }
 .Contact{
 	margin-top:50px;
-	margin-left:50px;
+	margin-left:0px;
 	text-align:left;
 	
 	
@@ -305,7 +305,7 @@ h4{
 
 
 .footerlogo img{
-		margin-top:0px;
+		margin-top:20px;
 		margin-right:10px;
 		float:right;
 		width:300px;
