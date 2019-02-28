@@ -3,20 +3,20 @@
 /**
  *
  */
- include_once ("conn.php");
-class address
+include "conn.php";
+class Address
 {
   public $id;
-  public $fullname;
-  public $email;
-  public $dob;
-  public $password;
-  public $usertype_id;
+  public $name;
+  public $parentId;
+  
 
   function insert($address)
   {
-    $sql = "INSERT INTO Tutorial2 (ID, FullName, Email, DOB, Password, UserType_Id)
-    VALUES ('".$user->id."', 'amr', 'amr@gmail.com' , '7-7-97' , '123', '1')";
+    //$this->id=$address->$id;
+    //$this->parentId=$address->$parentId;
+    $sql = "INSERT INTO Tutorial2 (`name`,`parentId`)
+    VALUES ('".$address->id."', '".$address->parentId."')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -36,39 +36,46 @@ class address
 
 
  ?>
- <form  method="post" action=>
+
+<form  method="post" action=>
 
 
-        <h3>Add address</h3>
-        <form action="" method="post">
-        <select>
-  <option value="egypt">Egypt</option>
+<h3>Add address</h3>
+<form action="" method="post">
+<select>
+<option value="egypt">Egypt</option>
 </select> 
 <select name="city">
-    <option value="10">Cairo</option>
-    <option value="11">Alexandria</option>
+<option value="10">Cairo</option>
+<option value="11">Alexandria</option>
 </select>
 
-      <input type="text" placeholder="enter street name" name="streetName">
-      <input type="submit" class="Submit_Button" name="submit">
+<input type="text" placeholder="enter street name" name="streetName">
+<input type="submit" class="Submit_Button" name="submit">
 </form>
 
 
-       <?php
-      
+<?php
 
+$address= new Address;
 
-$sql = "INSERT INTO address (`name`, `parentId`)
-VALUES ('".$_POST['streetName']."', '".$_POST['city']."')";
+$address->name= $_POST['streetName'];
+$address->parentId=$_POST['city'];
+$address->insert($address);
+var_dump($address);
+echo "<br>";
+echo $_POST['streetName']."<br>".$_POST['city'];
 
-if (mysqli_query($con, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($con);
-}
+// $sql = "INSERT INTO address (`name`, `parentId`)
+// VALUES ('".$_POST['streetName']."', '".$_POST['city']."')";
 
-mysqli_close($con);
+// if (mysqli_query($conn, $sql)) {
+// echo "New record created successfully";
+// } else {
+// echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// }
 
-       ?> 
+// mysqli_close($conn);
 
+?> 
 
