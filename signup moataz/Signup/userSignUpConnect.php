@@ -10,6 +10,7 @@ if (isset($_GET['submit']))
 }
 
 
+
 //assossiative array
 // $arrayName = array('moataz' => 22 );
 // $arrayssss = array( 22 );
