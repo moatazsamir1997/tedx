@@ -2,12 +2,16 @@
 
 $config = new Controller();
 
-$GLOBALS['crud'] = "/crud/";
-$GLOBALS['users'] = "users";
-$GLOBALS['submit'] = "submit";
+$GLOBALS['ASSET'] = "../crud/";
 
 
-// /* Main routes */
+$GLOBALS['user'] = "users";
+$GLOBALS['userSubmit'] = "submit";
+
+
+
+
+/* Main routes */
 if($_SERVER['REQUEST_URI'] == '/crud/')
 {
 	$config->route('crud/users');
@@ -16,25 +20,29 @@ if($_SERVER['REQUEST_URI'] == '/crud/')
 
 /** Functional routes **/
 
-
-else if( $_SERVER['REQUEST_URI'] == $crud.$users) 
+else if($_SERVER['REQUEST_URI'] == "/crud/users") 
 {
+	$config->getController('UserController');	
+	$UserController = new UserController();
+	
+if (isset($_POST['insert'])) {	
+	
+		$request = $_POST;
+		
+		$UserController->store($request);
+	}
+	else $UserController->index();
+
+}
+else if($_SERVER['REQUEST_URI'] == "/crud/submit")
+{
+	$id = $_POST['id'];
+	
+	
 	$config->getController('UserController');
 	
 	$UserController = new UserController();
 	
-	$UserController->index();
-	
-}
-// else if($_SERVER['REQUEST_URI'] == "$crud.'/'.$users.'/'.$submit")
-// {
-// 	$id = $_POST['id'];
-	
-	
-// 	$config->getController('UserController');
-	
-// 	$UserController = new UserController();
-	
-// 	$UserController->getAllUser($id);
+	$UserController->getUserData($id);
 
-// }
+}
