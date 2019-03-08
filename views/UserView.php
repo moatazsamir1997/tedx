@@ -15,8 +15,7 @@
             password: <input type="password" name="pass" >
             <button type="submit" name="login">LogIn</button>
         </form>
-        <a href="views\signUp.php">Don't have an account</button>
-    </div>
+        <a href="views\signUp.php">Don't have an account</a>
     
 </body>
 </html>

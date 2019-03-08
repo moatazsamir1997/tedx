@@ -1,7 +1,7 @@
 <?php
 
 require_once('app/Controllers/Controller.php');
- include('model\Model.php');
+include('model\Model.php');
 class UserModel extends Model
 {
 	private $id;  
