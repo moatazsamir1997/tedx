@@ -18,6 +18,11 @@ class Controller
 	{
 		include('app/Controllers/'.$controllerName.".php");
 	}
+	
+	public function includeClass($ClassName)
+	{
+		include('model/'.$ClassName.".php");
+	}
 
 	public function view($path, $data = array())
 	{

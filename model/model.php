@@ -17,6 +17,9 @@ class Model
    
     public function getData($tableName , $columnName )
     {    
+        if ($this->config == NULL) {
+            $this->config = new Controller();
+        }
         $User = $this->config->getInstance();
         
         $query = $User->query("SELECT `id`, $columnName FROM `$tableName`");

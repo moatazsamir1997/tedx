@@ -1,5 +1,5 @@
 <?php
-include('model\model.php');
+require_once('model\model.php');
 class ProductModel extends Model
 {
     private $price;
