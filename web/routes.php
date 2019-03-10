@@ -63,7 +63,6 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['crud'].$GLOBALS['addProductType'])
 {
 	$config->getController('ProductController');
 	$productController = new ProductController();
-	
 	if(isset($_POST['addProduct']) && !empty($_POST))
 	{
 		var_dump($_POST);
@@ -73,4 +72,3 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['crud'].$GLOBALS['addProductType'])
 }
 
 
-var_dump(1);

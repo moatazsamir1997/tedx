@@ -13,3 +13,22 @@
         </form>
     </body>
 </html>
+
+<!-- 
+<br>
+            <br>
+            <label for="atrrname">add currency:</label>
+            <input type="text" name="currency">
+            <br>
+            <label for="atrrname">cenversion to dollars:</label>
+            <input type="text" name="conversionValue">
+            <br> -->
+
+
+   <!-- datatype: <select>
+
+                
+<option value="number">number</option>
+<option value="name">name</option>
+
+</select> -->

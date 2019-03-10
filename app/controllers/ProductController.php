@@ -1,18 +1,20 @@
 <?php
 include('model/ProductModel.php');
-include('app\controllers\Controller.php');
-class ProductController extends ProductModel
+class ProductController extends Controller
 {
-    
+    private $productModel;
+
+    public function __construct(){
+        $this->productModel = new ProductModel();
+    }
+
     public function store($request)
     {
-        Parent::store($request);
-        $this->config = new Controller();
-        $this->config->view('addProductType');
+        $this->productModel->store($request);
+        $this->index();
     }
     public function index()
     {
-        $this->config = new Controller();
-        $this->config->view('productgeninsert');
+        $this->view('productgeninsert');
     }
 }
