@@ -2,8 +2,8 @@
 
 $config = new Controller();
 
-$GLOBALS['ASSET'] = "../crud/";
-$GLOBALS['crud'] = "/crud/";
+$GLOBALS['ASSET'] = "../tedx/";
+$GLOBALS['tedx'] = "/tedx/";
 
 $GLOBALS['addProductType'] = "addProductType";
 $GLOBALS['productType'] = "productType";
@@ -15,15 +15,15 @@ $GLOBALS['submit'] = "/submit";
 
 
 /* Main routes */
-if($_SERVER['REQUEST_URI'] == '/crud/')
+if($_SERVER['REQUEST_URI'] == '/tedx/')
 {
-	$config->route("crud/".$GLOBALS['productType']);
+	$config->route("tedx/".$GLOBALS['productType']);
 }
 
 
 /** Functional routes **/
 
-else if($_SERVER['REQUEST_URI'] == "/crud/users") 
+else if($_SERVER['REQUEST_URI'] == "/tedx/users") 
 {
 	$config->getController('UserController');	
 	$UserController = new UserController();
@@ -37,7 +37,7 @@ if (isset($_POST['insert'])) {
 	else $UserController->index();
 
 }
-else if($_SERVER['REQUEST_URI'] == "/crud/submit")
+else if($_SERVER['REQUEST_URI'] == "/tedx/submit")
 {
 	$id = $_POST['id'];
 	
@@ -48,18 +48,19 @@ else if($_SERVER['REQUEST_URI'] == "/crud/submit")
 	$UserController->getUserData($id);
 
 }
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['crud'].$GLOBALS['productType'])
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'])
 {
-	$config->getController('ProductTypeController');
-	$productTypeController = new ProductTypeController();
 	if(isset($_POST['addType']) && !empty($_POST))
 	{
-		$productTypeController->store($_POST);
+		$ProductTypeModel = new ProductTypeModel();
+        $ProductTypeModel->store($_POST);
+        $productTypes = $ProductTypeModel->getColumnData('name');
+        $config->view('productgeninsert', $productTypes);
 	}
-	else $productTypeController->index();
+	else $config->view('addProductType');
 }
 
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['crud'].$GLOBALS['addProductType'])
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProductType'])
 {
 	$config->getController('ProductController');
 	$productController = new ProductController();
