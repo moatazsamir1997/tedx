@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <form action="<?php echo $GLOBALS['ASSET'].$GLOBALS['addProduct']?>" method="POST">
+        <form action="<?php echo $GLOBALS['ASSET'].$GLOBALS['addOptions']?>" method="POST">
             <br><br><br>
             <label>Add new product name:</label>
             <input type="text" name="name" size="50">
