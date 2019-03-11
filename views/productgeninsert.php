@@ -17,9 +17,9 @@
             <input type="number" name="price" >
             <label>Product Type:</label>
             <select name = "productTypeId">  
-            <?php foreach ($data as $productType) { ?> 
-                <option value="<?php echo $productType["id"] ?>"><?php echo $productType["name"] ?></option>
-            <?php }?>        
+                <?php foreach ($data as $productType) { ?> 
+                    <option value="<?php echo $productType["id"] ?>"><?php echo $productType["name"] ?></option>
+                <?php }?>        
             </select>
             <button type="submit" name="addProduct">submit</button>
         </form>

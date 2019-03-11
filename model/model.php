@@ -1,7 +1,7 @@
 <?php
 
 require_once('app/Controllers/Controller.php');
-//CRUD = select + insert + update + Delete
+
 class Model
 {
     protected $config;
@@ -15,7 +15,7 @@ class Model
 		$this->config = new Controller();
 	}
    
-    public function getData($tableName , $columnName )
+    public function getData($tableName , $columnName)
     {    
         if ($this->config == NULL) {
             $this->config = new Controller();

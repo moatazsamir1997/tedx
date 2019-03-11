@@ -7,6 +7,7 @@ $GLOBALS['tedx'] = "/tedx/";
 $GLOBALS['/tedx'] = "tedx/";
 
 $GLOBALS['addProduct'] = "addProduct";
+$GLOBALS['addOptions'] = "addOptions";
 $GLOBALS['productType'] = "productType";
 $GLOBALS['user'] = "users";
 $GLOBALS['userSubmit'] = "submit";
@@ -71,7 +72,7 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'])
 	if(isset($_POST['addProduct']) && !empty($_POST))
 	{
 		$productModel->store($_POST);
-		$config->route($GLOBALS['/tedx'].$GLOBALS['addProduct'].$GLOBALS['submit']);
+		$config->route($GLOBALS['/tedx'].$GLOBALS['addOptions']);
 	}
 	else
 	{
@@ -80,12 +81,18 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'])
 	} 
 }
 
-// elseif ($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'].$GLOBALS['submit']) 
-// {
-// 	$config->includeClass('ProductModel');
-// 	$productModel = new ProductModel();
-// 	$productModel->delete('Product','id',14);
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'] ) 
+{
+	$config->view('addOptions');
+}
 
-// }
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'].$GLOBALS['submit']) 
+{
+	if(isset($_POST['Options']) && !empty($_POST))
+	{
+		$numOfOptions = (integer)$_POST['numOfOptions'];
+		$config->view('addOptionValuesSubmit');
+	}
+}
 
 
