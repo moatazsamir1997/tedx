@@ -35,13 +35,6 @@ class Controller
 	}
 
 
-	public function getSearchResults($DBobject,$tableName , $columnName , $searchString)
-	{
-		$query = $DBobject->query("SELECT * FROM `$tableName` WHERE `$columnName` LIKE '%$searchString%'");
-
-		return $query->fetchAll(PDO::FETCH_ASSOC);
-		
-	}
 
 }
 

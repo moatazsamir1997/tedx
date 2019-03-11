@@ -1,6 +1,6 @@
 <?php
 require_once('model\model.php');
-class ProductModel extends Model
+class ProductModel extends Model implements Icrud
 {
     private $price;
     private $quantity;
@@ -23,10 +23,19 @@ class ProductModel extends Model
 		$this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
     }
 
-    public function update()
+    public function update($request)
     {
         $valueArr = array('ss', 50, 100, 44);
         $this->dynamicUpdate($this->tableName, $this->columnNamesArr, $valueArr , $where = 'id = 1' );
+    }
+
+    public function delete($request)
+    {
+        # code...
+    }
+    public function search($request)
+    {
+        # code...
     }
 
     

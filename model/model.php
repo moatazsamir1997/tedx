@@ -10,6 +10,9 @@ class Model
     protected $tableName;
     protected $columnNamesArr;
     protected $columnValuesArr;
+    protected $createdDate;
+    protected $lastUpdatedDate;
+    protected $isDeleted;
 
 	public function __construct(){
 		$this->config = new Controller();
@@ -39,6 +42,16 @@ class Model
         
         return $data;	   
     }
+
+    public function getSearchResults($tableName , $columnName , $searchString)
+	{
+        if ($this->config == NULL) {    $this->config = new Controller();   }
+
+        $DBInstance = $this->config->getInstance();
+		$query = $DBInstance->query("SELECT * FROM `$tableName` WHERE `$columnName` LIKE '%$searchString%'");
+
+		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
     
    public function insert($columnNamesArr , $columnValuesArr , $tableName)
    {
@@ -90,6 +103,8 @@ class Model
         echo $sql;
         $model->query($sql);
     }
+
+    
 
   
 

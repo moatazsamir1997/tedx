@@ -1,7 +1,7 @@
 <?php
 include('model.php');
 
-class ProductTypeModel extends Model
+class ProductTypeModel extends Model implements Icrud
 {
     
     private $columnName;
@@ -9,7 +9,7 @@ class ProductTypeModel extends Model
         $this->tableName = 'ProductType';
     }
 
-    public function getColumnData( $columnName)
+    public function getColumnData($columnName)
     {   
         return $this->getData($this->tableName ,  $columnName );
     }
@@ -22,6 +22,19 @@ class ProductTypeModel extends Model
        $this->columnValuesArr = array( $this->name); 			
        $this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
    }
+
+   public function update($request)
+    {
+        # code...
+    }
+    public function delete($request)
+    {
+        # code...
+    }
+    public function search($request)
+    {
+        # code...
+    }
 
 
     
