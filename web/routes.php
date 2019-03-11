@@ -71,6 +71,7 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'])
 	if(isset($_POST['addProduct']) && !empty($_POST))
 	{
 		$productModel->store($_POST);
+		$config->route($GLOBALS['/tedx'].$GLOBALS['addProduct'].$GLOBALS['submit']);
 	}
 	else
 	{
@@ -78,5 +79,13 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'])
 		$config->view('productgeninsert', $productTypes);
 	} 
 }
+
+// elseif ($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'].$GLOBALS['submit']) 
+// {
+// 	$config->includeClass('ProductModel');
+// 	$productModel = new ProductModel();
+// 	$productModel->delete('Product','id',14);
+
+// }
 
 

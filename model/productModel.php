@@ -23,5 +23,11 @@ class ProductModel extends Model
 		$this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
     }
 
+    public function update()
+    {
+        $valueArr = array('ss', 50, 100, 44);
+        $this->dynamicUpdate($this->tableName, $this->columnNamesArr, $valueArr , $where = 'id = 1' );
+    }
+
     
 }
