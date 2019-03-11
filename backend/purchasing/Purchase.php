@@ -1,5 +1,5 @@
 <?php
-include('model/model.php')
+include('model/Model.php')
 class Purchase extends Model implements Icrud
 {  
     private $userId

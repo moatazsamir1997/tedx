@@ -1,14 +1,15 @@
-<?php 
+<?php
 include('model/Model.php');
 
-class PaymentOptions extends Model implements Icrud
+class ContactNumber extends Model implements Icrud
 {
-    private $dataType;
+    private $contactNumber;
+    private $contactTypeId;
 
     public function __construct()
     {
-        $this->tableName = 'PaymentOptions';
-        $this->columnNamesArr = array('id' , 'name' , 'dataType');
+        $this->tableName = 'contactNumber';
+        $this->culomnNamesArr = array('contactNumber', 'contactTypeId');
     }
 
     public function store($request){}
@@ -16,4 +17,6 @@ class PaymentOptions extends Model implements Icrud
     public function delete($request){}
     public function search($request){}
 
+
+    
 }

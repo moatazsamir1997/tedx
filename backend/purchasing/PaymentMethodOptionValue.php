@@ -1,5 +1,5 @@
 <?php
-include('model/model.php');
+include('model/Model.php');
 
 class PaymentMethodOptionValue extends Model implements Icrud
 {

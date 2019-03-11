@@ -1,5 +1,5 @@
 <?php
-include('model/model.php')
+include('model/Model.php')
 class DatePurchase extends Model implements Icrud
 {  
     private $dateTime
