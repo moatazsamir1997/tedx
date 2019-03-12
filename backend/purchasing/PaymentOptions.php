@@ -1,7 +1,7 @@
 <?php 
-include('model/Model.php');
+include('product\DBHellper.php');
 
-class PaymentOptions extends Model implements Icrud
+class PaymentOptions extends DBHelper implements Icrud
 {
     private $dataType;
 

@@ -1,6 +1,6 @@
 <?php
-include('model\model.php');
-class PaymentMethod extends Model implements Icrud
+include('product\DBHellper.php');
+class PaymentMethod extends DBHelper implements Icrud
 {
     public function __construct()
     {

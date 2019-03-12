@@ -2,7 +2,7 @@
 
 require_once('app/Controllers/Controller.php');
 
-class Model
+class DBHelper
 {
     protected $config;
     protected $id;
@@ -71,7 +71,7 @@ class Model
             
     }
 
-    public function delete($tableName, $columnName, $value)
+    public function dynamicDelete($tableName, $columnName, $value)
     {
         if ($this->config == NULL) {
             $this->config = new Controller();

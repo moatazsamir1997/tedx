@@ -1,6 +1,6 @@
 <?php
-require_once('model\model.php');
-class ProductModel extends Model implements Icrud
+require_once('backend\product\DBHelper.php');
+class Product extends DBHelper implements Icrud
 {
     private $price;
     private $quantity;

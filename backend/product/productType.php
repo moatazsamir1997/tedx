@@ -1,7 +1,8 @@
 <?php
-include('model.php');
+include('backend\product\DBHelper.php');
+include('app\interface\Icrud.php');
 
-class ProductTypeModel extends Model implements Icrud
+class ProductType extends DBHelper implements Icrud
 {
     
     private $columnName;

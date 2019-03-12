@@ -1,8 +1,8 @@
 <?php
 
 require_once('app/Controllers/Controller.php');
-include('model\Model.php');
-class UserModel extends Model
+include('product\DBHellper.php');
+class UserModel extends DBHelper
 {
 	private $id;  
 	private $fname;  

@@ -21,7 +21,7 @@ class Controller
 	
 	public function includeClass($ClassName)
 	{
-		include('model/'.$ClassName.".php");
+		include('backend/product/'.$ClassName.".php");
 	}
 
 	public function view($path, $data = array())

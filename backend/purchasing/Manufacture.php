@@ -1,5 +1,7 @@
 <?php
-class Manufacture extends Model implements Icrud
+include('product\DBHellper.php');
+
+class Manufacture extends DBHelper implements Icrud
 {
     private $addressId
     private $contactNumberId

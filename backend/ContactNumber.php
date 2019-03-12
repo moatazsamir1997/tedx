@@ -1,7 +1,7 @@
 <?php
-include('model/Model.php');
+include('product\DBHellper.php');
 
-class ContactNumber extends Model implements Icrud
+class ContactNumber extends DBHelper implements Icrud
 {
     private $contactNumber;
     private $contactTypeId;

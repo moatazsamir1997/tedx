@@ -1,6 +1,6 @@
 <?php
-include('model/Model.php')
-class Purchase extends Model implements Icrud
+include('product\DBHellper.php')
+class Purchase extends DBHelper implements Icrud
 {  
     private $userId
     private $datePurchaseId

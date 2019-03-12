@@ -2,7 +2,7 @@
 
 require_once('app/Controllers/Controller.php');
 
-require('model/userModel.php');
+require('model/userDBHelper.php');
 
 class UserController
 {

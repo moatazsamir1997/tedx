@@ -1,6 +1,6 @@
 <?php
-include('model/Model.php')
-class DatePurchase extends Model implements Icrud
+include('product\DBHellper.php')
+class DatePurchase extends DBHelper implements Icrud
 {  
     private $dateTime
 

@@ -1,7 +1,7 @@
 <?php
-include('model.php');
+include('backend\product\DBHelper.php');
 include('app\interface\Icrud.php');
-class ProductOptionsValue extends Model implements Icrud
+class ProductOptionsValue extends DBHelper implements Icrud
 {
     private $value;
     private $PrOPId;
