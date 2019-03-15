@@ -9,7 +9,7 @@ class ContactNumber extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'contactNumber';
-        $this->culomnNamesArr = array('contactNumber', 'contactTypeId');
+        $this->columnNamesArr = array('contactNumber', 'contactTypeId');
     }
 
     public function store($request){}

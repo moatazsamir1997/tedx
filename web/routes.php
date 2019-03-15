@@ -12,6 +12,7 @@ $GLOBALS['productType'] = "productType";
 $GLOBALS['user'] = "users";
 $GLOBALS['userSubmit'] = "submit";
 $GLOBALS['submit'] = "/submit";
+$GLOBALS['altering'] = "altering";
 
 
 
@@ -94,5 +95,6 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'].$GLOB
 		include('views/'.'addOptionValuesSubmit'.".php");
 	}
 }
+
 
 

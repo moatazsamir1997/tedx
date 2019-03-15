@@ -18,7 +18,7 @@ class DBHelper
 		$this->config = new Controller();
 	}
    
-    public function getData($tableName , $columnName)
+    public function getColumnData($tableName , $columnName)
     {    
         if ($this->config == NULL) {
             $this->config = new Controller();
@@ -31,7 +31,22 @@ class DBHelper
         
         return $data;	   
     }
-    public function getUserData($id){
+
+    public function getId($tableName , $columnName , $columnValue)
+    {
+        if ($this->config == NULL) {
+            $this->config = new Controller();
+        }
+        $User = $this->config->getInstance();
+        
+        $query = $User->query("SELECT `id` FROM `$tableName` WHERE `$columnName` = $columnValue ");
+         
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $data;	   
+    }
+
+    public function getDataById($id){
         
         $User = $this->config->getInstance();
         
@@ -99,13 +114,17 @@ class DBHelper
         }
         $stringSET = implode(" , ", $arraySET);
         $sql = "UPDATE `$tableName` SET $stringSET WHERE $where ";
-        echo "<br>";
-        echo $sql;
+        
         $model->query($sql);
     }
 
     
-
+    public function SimpleUpdate($tableName, $columnName, $value, $WHERE_ColumnName, $WHERE_Value)
+    {
+        $model = $this->config->getInstance();
+        
+        $model->quote("UPDATE `$tableName` SET `$columnName` = $value WHERE `$WHERE_ColumnName` = $WHERE_Value");
+    }
   
 
 }
@@ -115,14 +134,6 @@ class DBHelper
 
 
 
-// public function update($tableName, $columnName, $value)
-//     {
-//         $model = $this->config->getInstance();
-//         $arrayName =[];
-//         for ($i=0; $i < count($columnNamesArr) ; $i++) { 
-//             # code...
-//         }
-//         $model->quote("UPDATE `$tableName` SET `$columnName` = $value WHERE `$columnName` = $value");
-//     }
+
 
 ?>

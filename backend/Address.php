@@ -1,14 +1,15 @@
 <?php
-include('model/Model');
+include('product\DBHelper.php');
 
-class ContactType extends DBHelper implements Icrud
+class Address extends DBHelper implements Icrud
 {
 
+    private $parentId;
 
     public function __construct()
     {
-        $this->tableName = 'contactType';
-        $this->columnNamesArr = array();
+        $this->tableName = 'Address';
+        $this->columnNamesArr = array('parentId');
     }
 
 
@@ -16,7 +17,6 @@ class ContactType extends DBHelper implements Icrud
     public function update($request){}
     public function delete($request){}
     public function search($request){}
-
 
     
 }

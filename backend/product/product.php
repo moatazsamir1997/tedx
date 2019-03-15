@@ -1,5 +1,6 @@
 <?php
 require_once('backend\product\DBHelper.php');
+include('app\interface\Icrud.php');
 class Product extends DBHelper implements Icrud
 {
     private $price;
@@ -38,5 +39,6 @@ class Product extends DBHelper implements Icrud
         # code...
     }
 
+   
     
 }

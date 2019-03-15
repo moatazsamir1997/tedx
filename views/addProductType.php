@@ -11,5 +11,9 @@
             add new product Type:<input type="text" name="productType">
             <button type="submit" name="addType">submit</button>
         </form>
+        
+            <a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['altering']?>"> altering </a>
+        
+        
     </body>
 </html>

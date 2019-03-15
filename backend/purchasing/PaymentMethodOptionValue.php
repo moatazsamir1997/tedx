@@ -6,7 +6,7 @@ class PaymentMethodOptionValue extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'paymentMethodOptionValue';
-        $this->culomnNamesArr = array('paymentMethodOptionId' , 'purchaseId' , 'value');
+        $this->columnNamesArr = array('paymentMethodOptionId' , 'purchaseId' , 'value');
     }
 
     public function store($request){}
