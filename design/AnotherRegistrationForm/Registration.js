@@ -5,6 +5,7 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function(){
+	
 	if(animating) return false;
 	animating = true;
 	
@@ -16,6 +17,7 @@ $(".next").click(function(){
 	
 	//show the next fieldset
 	next_fs.show(); 
+	
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -41,6 +43,7 @@ $(".next").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
+
 
 $(".previous").click(function(){
 	if(animating) return false;
