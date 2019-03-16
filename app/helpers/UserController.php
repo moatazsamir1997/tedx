@@ -1,15 +1,15 @@
 <?php
 
-require_once('app/Controllers/Controller.php');
+require_once('app/Helpers/Helper.php');
 
 require('model/userDBHelper.php');
 
-class UserController
+class UserHelper
 {
 	private $config;
 	private $User;
 	public function __construct(){	
-		$this->config = new Controller();
+		$this->config = new Helper();
 		$this->User = new UserModel();
 	}
 

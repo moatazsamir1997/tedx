@@ -1,6 +1,6 @@
 <?php
 
-require_once('app/Controllers/Controller.php');
+require_once('app/Helpers/Helper.php');
 
 class DBHelper
 {
@@ -15,13 +15,13 @@ class DBHelper
     protected $isDeleted;
 
 	public function __construct(){
-		$this->config = new Controller();
+		$this->config = new Helper();
 	}
    
     public function getColumnData($tableName , $columnName)
     {    
         if ($this->config == NULL) {
-            $this->config = new Controller();
+            $this->config = new Helper();
         }
         $User = $this->config->getInstance();
         
@@ -35,7 +35,7 @@ class DBHelper
     public function getId($tableName , $columnName , $columnValue)
     {
         if ($this->config == NULL) {
-            $this->config = new Controller();
+            $this->config = new Helper();
         }
         $User = $this->config->getInstance();
         
@@ -60,7 +60,7 @@ class DBHelper
 
     public function getSearchResults($tableName , $columnName , $searchString)
 	{
-        if ($this->config == NULL) {    $this->config = new Controller();   }
+        if ($this->config == NULL) {    $this->config = new Helper();   }
 
         $DBInstance = $this->config->getInstance();
 		$query = $DBInstance->query("SELECT * FROM `$tableName` WHERE `$columnName` LIKE '%$searchString%'");
@@ -70,7 +70,7 @@ class DBHelper
     
    public function insert($columnNamesArr , $columnValuesArr , $tableName)
    {
-        $this->config = new Controller();
+        $this->config = new Helper();
         //MAKING QUOTATIONS
         function quote($str) {
             if (is_string($str)) 
@@ -89,7 +89,7 @@ class DBHelper
     public function dynamicDelete($tableName, $columnName, $value)
     {
         if ($this->config == NULL) {
-            $this->config = new Controller();
+            $this->config = new Helper();
         }
         $model = $this->config->getInstance();
         $model->query("UPDATE `$tableName` SET `isDeleted`= 1 WHERE `$columnName` = $value");
@@ -100,7 +100,7 @@ class DBHelper
     public function dynamicUpdate($tableName, $columnNamesArr, $valueArr , $where = '1' )
     {
         if ($this->config == NULL) {
-            $this->config = new Controller();
+            $this->config = new Helper();
         }
         $model = $this->config->getInstance();
         $arraySET =[];

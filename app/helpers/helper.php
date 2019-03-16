@@ -4,7 +4,7 @@
 require('app/dependencies/PDOConnection.php');
 
 
-class Controller
+class Helper
 {
 
 	public function getInstance()
@@ -14,10 +14,6 @@ class Controller
 		return $instance;
 	}
 
-	public function getController($controllerName)
-	{
-		include('app/Controllers/'.$controllerName.".php");
-	}
 	
 	public function includeClass($ClassName)
 	{

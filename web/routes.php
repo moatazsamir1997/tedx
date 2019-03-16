@@ -1,5 +1,5 @@
 <?php
-$config = new Controller();
+$config = new Helper();
 
 
 $GLOBALS['ASSET'] = "../tedx/";
@@ -26,31 +26,7 @@ if($_SERVER['REQUEST_URI'] == '/tedx/')
 
 /** Functional routes **/
 
-else if($_SERVER['REQUEST_URI'] == "/tedx/users") 
-{
-	$config->getController('UserController');	
-	$UserController = new UserController();
-	
-	if (isset($_POST['insert'])) {	
-		
-			$request = $_POST;
-			
-			$UserController->store($request);
-		}
-	else $UserController->index();
 
-}
-else if($_SERVER['REQUEST_URI'] == "/tedx/submit")
-{
-	$id = $_POST['id'];
-	
-	$config->getController('UserController');
-	
-	$UserController = new UserController();
-	
-	$UserController->getUserData($id);
-
-}
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'])
 {
 	$config->view('addProductType');
