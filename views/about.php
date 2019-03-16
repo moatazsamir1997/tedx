@@ -1,36 +1,5 @@
 <?php include('views\layouts\header.php'); ?>
 
-<body id="page-top">
-  <!-- Navigation Start -->
-  <nav id="navigation" class="navbar navbar-fixed-top">
-    <div class="container">
-      <div class="row">
-        <div class="navbar-header col-lg-3">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand font-family-alt letter-spacing-1 text-extra-large text-uppercase" href="#">
-            <img class="logo-navbar-dark" src="../res/images/logos/tedx-logo.png" alt="TEDx"/>
-            <img class="logo-navbar-white" src="../res/images/logos/TEDx.png" alt="TEDx"/>
-          </a>
-        </div>
-        <!-- //.navbar-header -->
-
-        <?php include('views\layouts\headerNavbar.php'); ?>  
-        <!-- //.navbar-collapse -->
-      </div>
-      <!-- //.row -->
-    </div>
-    <!-- //.container -->
-  </nav>
-  <!-- //Navigation End -->
-
-
-
   <!-- Section - Home Start -->
   <section id="home-bg-slideshow" class="bg-gray-dark-2 height-100 no-padding overflow-hidden width-100">
     <!-- BG Slideshow -->
