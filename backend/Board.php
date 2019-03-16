@@ -11,7 +11,7 @@ class Board extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'board';
-        $this->columnNamesArr = array('academicYearId','openingDate','closingDate');
+        $this->columnNamesArr = array('name','academicYearId','openingDate','closingDate');
     }
 
     public function store($request)

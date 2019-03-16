@@ -9,7 +9,7 @@ class Address extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'Address';
-        $this->columnNamesArr = array('parentId');
+        $this->columnNamesArr = array('name','parentId');
     }
 
 

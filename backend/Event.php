@@ -14,7 +14,7 @@ class Event extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'event';
-        $this->culomnNameArr = array('date', 'eventStart', 'eventEnd', 'addressId', 'academicYearId');
+        $this->culomnNameArr = array('date', 'eventStart', 'eventEnd', 'addressId', 'academicYearId','userId');
     } 
     public function store($request){}
     public function update($request){}

@@ -6,11 +6,12 @@ class UserType extends DBHelper implements Icrud
 {
     
     private $parentId;
-    private $linkId;
+    private $linkIdArr;
 
     
     public function __construct(){
         $this->tableName = 'UserType';
+        $this->linkIdArr = [];
         $this->columnNamesArr = array('parentId','linkId');
 
     }

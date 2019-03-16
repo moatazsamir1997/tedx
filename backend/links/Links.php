@@ -5,7 +5,7 @@ class Links extends DBHelper implements Icrud
     private $physicalName;        
     private $friendlyName;
     private $htmlCode;
-    private $userTypeId;
+    private $userTypeIdArr;
 
    
 
@@ -13,6 +13,7 @@ class Links extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'Links';
+        $this->userTypeIdArr = [];
         $this->columnNamesArr = array('physicalName','friendlyName','htmlCode');
     }
 
