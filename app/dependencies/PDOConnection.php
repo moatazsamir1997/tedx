@@ -14,7 +14,7 @@ class DB_Connect
      */
     static private $PDOInstance; 
 
-    private $dsn = 'mysql:host=localhost;dbname=user';
+    private $dsn = 'mysql:host=localhost;dbname=tedx';
     private $username = "root";
     private $password = "";
      
