@@ -13,7 +13,7 @@
 		<form action = '..\web\product.php' method ='POST'>
             <?php for ($i=0; $i <count($name) ; $i++) {?> 
                 <label><p><b><?php echo $name[$i];?></b></p></label>
-                <input type="<?php echo $value[$i];?>" name="<?php echo $name[$i];?>" placeholder="Enter Option value here" required>
+                <input type="<?php echo $datatype[$i];?>" name="<?php echo $name[$i];?>" placeholder="Enter Option value here" required>
             <?php } ?>
 			<br><br>
 			<p><b>Quantity</b></p>

@@ -16,6 +16,5 @@ if (isset($_POST['next2'])) {
             array_push($datatype,$value);
         }
     }
-    $multiArr = array('name' => $name , 'datatype' => $datatype );
     include('views/'.'addOptionValues'.".php");
 }
