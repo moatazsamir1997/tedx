@@ -20,7 +20,7 @@ $GLOBALS['altering'] = "altering";
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
 {
-	$config->route("tedx/".$GLOBALS['productType']);
+	Helper::route("/tedx/views/about.php");
 }
 
 
@@ -29,36 +29,26 @@ if($_SERVER['REQUEST_URI'] == '/tedx/')
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'])
 {
-	$config->view('addProductType');
+	Helper::view('addProductType');
 }
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addProduct'])
-{
-	$config->includeClass('ProductType');
-	$productType = new ProductType();
-	if(isset($_POST['addType']) && !empty($_POST))
-	{
-		$productType->store($_POST);        
-		$productTypes = $productType->getColumnData('name');
-		$config->view('productgeninsert', $productTypes);
-	}
-	else $config->view('addProductType');
-}
+
+
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'] ) 
 {
-	$config->includeClass('ProductType');
-	$config->includeClass('Product');
+	Helper::includeClass('ProductType');
+	Helper::includeClass('Product');
 	$productType = new ProductType();
 	$product = new Product();
 	if(isset($_POST['addProduct']) && !empty($_POST))
 	{
 		$product->store($_POST);
-		$config->view('addOptions');
+		Helper::view('addOptions');
 	}
 	else
 	{
 		$productTypes = $productType->getColumnData('name');
-		$config->view('productgeninsert', $productTypes);
+		Helper::view('productgeninsert', $productTypes);
 	} 
 }
 

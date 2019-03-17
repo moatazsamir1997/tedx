@@ -1,11 +1,15 @@
 <?php
+include('app\helpers\helper.php');
+// Helper::includeClass('product/Product');
+// Helper::includeClass('product/ProductOptions');
+// Helper::includeClass('product/ProductOptionsValue');
 
 if (isset($_POST['next1']) && !empty($_POST['optionNumbers'])) {
     $numOfOptions = (integer)$_POST['optionNumbers'];
 	include('views/'.'addOptionDetails'.".php");
 }
-if (isset($_POST['next2'])) {
-   
+if (isset($_POST['next2'])) 
+{
     $name = [];
     $datatype = [];
     foreach ($_POST as $key => $value) {
@@ -17,4 +21,10 @@ if (isset($_POST['next2'])) {
         }
     }
     include('views/'.'addOptionValues'.".php");
+}
+if (isset($_POST['submitProductTypeName'])) {
+    Helper::includeClass('product/ProductType');
+    $productType = new ProductType();
+    $productType->store($_POST);
+    include('views/'.'product'.".php");
 }

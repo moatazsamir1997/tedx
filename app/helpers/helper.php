@@ -1,13 +1,10 @@
 <?php
-
-
 require('app/dependencies/PDOConnection.php');
-
 
 class Helper
 {
 
-	public function getInstance()
+	public static function getInstance()
 	{
 		$instance = new DB_Connect();
 
@@ -15,17 +12,17 @@ class Helper
 	}
 
 	
-	public function includeClass($ClassName)
+	public static function includeClass($ClassName)
 	{
-		include('backend/product/'.$ClassName.".php");
+		include('backend/'.$ClassName.".php");
 	}
 
-	public function view($path, $data = array())
+	public static function view($path, $data = array())
 	{
 		include('views/'.$path.".php");
 	}
 
-	public function route($routeName)
+	public static function route($routeName)
 	{
 		header('Location: ../'.$routeName);
 	}

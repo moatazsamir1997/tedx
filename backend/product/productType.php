@@ -1,5 +1,5 @@
 <?php
-include('backend\product\DBHelper.php');
+require_once('backend\product\DBHelper.php');
 include('app\interface\Icrud.php');
 
 class ProductType extends DBHelper implements Icrud
@@ -12,7 +12,8 @@ class ProductType extends DBHelper implements Icrud
 
     public function getColumnData($columnName)
     {   
-        return $this->getData($this->tableName ,  $columnName );
+        //returns an array of id and column values
+        return $this->getData($this->tableName , $columnName);
     }
 
 
