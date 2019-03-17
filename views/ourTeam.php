@@ -783,4 +783,4 @@
 
 
 
-  <?php include('views\layouts\footer.php');?>
+<?php include('views\layouts\footer.php');?>

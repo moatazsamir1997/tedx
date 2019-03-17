@@ -75,6 +75,7 @@
               <li><a href="ourTeam.php" class="line-height-unset">Our Team</a></li>
               <li><a href="alumni.php" class="line-height-unset">Alumni</a></li>
               <li><a href="contact.php" class="line-height-unset">Contact Us</a></li>
+              <li><a href="product.php" class="line-height-unset">Product</a></li>
               <li class="bg-base-color">
                   <a href="register.php" class="line-height-unset width-100">
                   Register
