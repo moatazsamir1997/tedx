@@ -13,23 +13,54 @@ $GLOBALS['user'] = "users";
 $GLOBALS['userSubmit'] = "submit";
 $GLOBALS['submit'] = "/submit";
 $GLOBALS['altering'] = "altering";
-
-
+$GLOBALS['about'] = "about";
+$GLOBALS['speakers'] = "speakers";
+$GLOBALS['ourTeam'] = "ourTeam";
+$GLOBALS['alumni'] = "alumni";
+$GLOBALS['contact'] = "contact";
+$GLOBALS['product'] = "product";
+$GLOBALS['register'] = "register";
 
 
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
 {
-	Helper::route("/tedx/views/about.php");
+	Helper::route($GLOBALS['ASSET'].$GLOBALS['about']);
 }
 
 
 /** Functional routes **/
 
 
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'])
-{
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['about']){
+	include('views/about.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['speakers']){
+	include('views/speakers.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['ourTeam']){
+	include('views/ourTeam.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['alumni']){
+	include('views/alumni.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['contact']){
+	include('views/contact.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product']){
+	include('views/product.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['register']){
+	include('views/register.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType']){
 	Helper::view('addProductType');
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLOBALS['submit']){
+	Helper::includeClass('product/ProductType');
+    $productType = new ProductType();
+    $productType->store($_POST);
+	Helper::route('product');
 }
 
 

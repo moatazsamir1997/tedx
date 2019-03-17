@@ -16,7 +16,7 @@
       <h3 class="font-family-alt font-weight-900 letter-spacing-2 text-uppercase xs-title-small title-medium title-sideline-base-color">
         Add Product Type
       </h3>
-      <a href="addProductType.php" class="btn btn-outline-base-color sm-btn-medium btn-large no-margin-rl"> + </a>
+      <a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['productType'];?>" class="btn btn-outline-base-color sm-btn-medium btn-large no-margin-rl"> + </a>
     </div>
   </div>
   <!-- //.col-md-6 -->
