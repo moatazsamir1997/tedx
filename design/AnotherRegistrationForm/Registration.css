@@ -9,12 +9,13 @@ html {
 	/*Image only BG fallback*/
 	
 	/*background = gradient + image pattern combo*/
-	background: 
-		linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+	background-image: url("../Home Page design/black.jpg");
+		
 }
 
 body {
 	font-family: montserrat, arial, verdana;
+	
 }
 /*form styles*/
 #msform {
