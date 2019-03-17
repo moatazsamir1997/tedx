@@ -15,6 +15,12 @@ class ProductType extends DBHelper implements Icrud
         //returns an array of id and column values
         return $this->getData($this->tableName , $columnName);
     }
+    
+    public function getAllTypes()
+    {   
+        //returns an array of id and names
+        return $this->getData($this->tableName , 'name');
+    }
 
 
    public function store($request)

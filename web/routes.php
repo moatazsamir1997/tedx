@@ -20,7 +20,7 @@ $GLOBALS['alumni'] = "alumni";
 $GLOBALS['contact'] = "contact";
 $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
-
+$GLOBALS['addNewProduct'] = 'addNewProduct';
 
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
@@ -49,19 +49,27 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['contact']){
 }
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product']){
 	include('views/product.php'); 
-}
+}	
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['register']){
 	include('views/register.php'); 
+}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
+	Helper::includeClass('product\productType');
+	$ProductType = new ProductType();
+	$ProductTypes = $ProductType->getAllTypes();
+	Helper::view('addProduct' , $ProductTypes);
 }
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType']){
 	Helper::view('addProductType');
 }
+
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLOBALS['submit']){
 	Helper::includeClass('product/ProductType');
     $productType = new ProductType();
     $productType->store($_POST);
 	Helper::route('product');
 }
+
 
 
 
