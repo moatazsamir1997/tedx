@@ -14,16 +14,10 @@ class DBHelper
     protected $lastUpdatedDate;
     protected $isDeleted;
 
-	public function __construct(){
-		$this->config = new Helper();
-	}
    
-    public function getColumnData($tableName , $columnName)
+    public function getData($tableName , $columnName)
     {    
-        if ($this->config == NULL) {
-            $this->config = new Helper();
-        }
-        $User = $this->config->getInstance();
+        $User = Helper::getInstance();
         
         $query = $User->query("SELECT `id`, $columnName FROM `$tableName`");
          
@@ -34,10 +28,11 @@ class DBHelper
 
     public function getId($tableName , $columnName , $columnValue)
     {
-        if ($this->config == NULL) {
-            $this->config = new Helper();
-        }
-        $User = $this->config->getInstance();
+        // if ($this->config == NULL) {
+        //     $this->config = new Helper();
+        // }
+        // $User = $this->config->getInstance();
+        $User = Helper::getInstance();;
         
         $query = $User->query("SELECT `id` FROM `$tableName` WHERE `$columnName` = $columnValue ");
          
@@ -46,11 +41,11 @@ class DBHelper
         return $data;	   
     }
 
-    public function getDataById($id){
+    public function getAllById($tableName,$id){
         
-        $User = $this->config->getInstance();
+        $User = Helper::getInstance();
         
-        $query = $User->query("SELECT * FROM `User` WHERE `id` = '$id'");
+        $query = $User->query("SELECT * FROM `$tableName` WHERE `id` = '$id'");
       
         
         $data = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -60,9 +55,7 @@ class DBHelper
 
     public function getSearchResults($tableName , $columnName , $searchString)
 	{
-        if ($this->config == NULL) {    $this->config = new Helper();   }
-
-        $DBInstance = $this->config->getInstance();
+        $DBInstance = Helper::getInstance();
 		$query = $DBInstance->query("SELECT * FROM `$tableName` WHERE `$columnName` LIKE '%$searchString%'");
 
 		return $query->fetchAll(PDO::FETCH_ASSOC);
@@ -70,7 +63,7 @@ class DBHelper
     
    public function insert($columnNamesArr , $columnValuesArr , $tableName)
    {
-        $this->config = new Helper();
+        
         //MAKING QUOTATIONS
         function quote($str) {
             if (is_string($str)) 
@@ -78,7 +71,7 @@ class DBHelper
                 return sprintf("'%s'", $str);
             }
         }
-        $Model = $this->config->getInstance();
+        $Model = Helper::getInstance();
         //tokenizer
    		$colString = implode(" , ", $columnNamesArr);
         $ValuesString = implode(' , ', array_map('quote', $columnValuesArr));
@@ -89,9 +82,9 @@ class DBHelper
     public function dynamicDelete($tableName, $columnName, $value)
     {
         if ($this->config == NULL) {
-            $this->config = new Helper();
+            
         }
-        $model = $this->config->getInstance();
+        $model = Helper::getInstance();
         $model->query("UPDATE `$tableName` SET `isDeleted`= 1 WHERE `$columnName` = $value");
     }
     
@@ -100,9 +93,9 @@ class DBHelper
     public function dynamicUpdate($tableName, $columnNamesArr, $valueArr , $where = '1' )
     {
         if ($this->config == NULL) {
-            $this->config = new Helper();
+            
         }
-        $model = $this->config->getInstance();
+        $model = Helper::getInstance();
         $arraySET =[];
         //casting array elements
         for ($i=0; $i < count($columnNamesArr) ; $i++) { 
@@ -121,7 +114,7 @@ class DBHelper
     
     public function SimpleUpdate($tableName, $columnName, $value, $WHERE_ColumnName, $WHERE_Value)
     {
-        $model = $this->config->getInstance();
+        $model = Helper::getInstance();
         
         $model->quote("UPDATE `$tableName` SET `$columnName` = $value WHERE `$WHERE_ColumnName` = $WHERE_Value");
     }

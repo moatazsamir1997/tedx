@@ -9,11 +9,12 @@ class User extends DBHelper implements Icrud
 	private $userTypeId; 
 	private $userAddressId; 
 	private $genderId; 
-	private $deparmentId; 
+	private $departmentId; 
 	private $eventIdArr; 
    
-	public function __construct()
+	public function __construct($id)
 	{
+		$this->id = $id;
 		$this->tableName = 'User';
 		$this->columnNamesArr = array('fname', 'lname', 'email', 'pwd', 'userTypeId', 'userAddressId', 'genderId', 'departmentId');
 		$this->eventIdArr = [];
@@ -31,6 +32,11 @@ class User extends DBHelper implements Icrud
 		$this->columnNamesArr = array('fname','lname'); 		
 		$this->columnValuesArr = array( $this->fname , $this->lname); 		
 		$this->insert($this->columnNamesArr , $this->columnValuesArr , "user");
+   }
+
+   public function getEventsUserAttended($id)
+   {
+		$this->getAllById($this->tableName,$id);
    }
 
    public function getUserId($request)

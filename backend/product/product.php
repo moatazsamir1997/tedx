@@ -30,14 +30,8 @@ class Product extends DBHelper implements Icrud
         $this->dynamicUpdate($this->tableName, $this->columnNamesArr, $valueArr , $where = 'id = 1' );
     }
 
-    public function delete($request)
-    {
-        # code...
-    }
-    public function search($request)
-    {
-        # code...
-    }
+    public function delete($request){}
+    public function search($request){}
 
    
     

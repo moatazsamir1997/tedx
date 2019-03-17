@@ -38,7 +38,7 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="footer-logo xs-text-center">
-            <img src="../res/images/logos/TEDx.png" alt="tedxLogo">
+            <img src="res/images/logos/TEDx.png" alt="tedxLogo">
           </div>
           <!-- //.footer-logo -->
           <p class="disclaimer xs-text-center">
@@ -71,34 +71,34 @@
 
 
   <!-- jQuery -->
-  <script src="../res/js/jquery.min.js"></script>
+  <script src="res/js/jquery.min.js"></script>
 
   <!-- Bootstrap -->
-  <script src="../res/js/bootstrap.min.js"></script>
+  <script src="res/js/bootstrap.min.js"></script>
 
   <!-- Plugins -->
-  <script src="../res/js/pace.min.js"></script>
-  <script src="../res/js/debouncer.min.js"></script>
-  <script src="../res/js/jquery.easing.min.js"></script>
-  <script src="../res/js/jquery.inview.min.js"></script>
-  <script src="../res/js/jquery.matchHeight.js"></script>
-  <script src="../res/js/isotope.pkgd.min.js"></script>
-  <script src="../res/js/imagesloaded.pkgd.min.js"></script>
-  <script src="../res/js/flickity.pkgd.min.js"></script>
-  <script src="../res/js/jquery.magnific-popup.min.js"></script>
-  <script src="../res/js/jquery.validate.min.js"></script>
+  <script src="res/js/pace.min.js"></script>
+  <script src="res/js/debouncer.min.js"></script>
+  <script src="res/js/jquery.easing.min.js"></script>
+  <script src="res/js/jquery.inview.min.js"></script>
+  <script src="res/js/jquery.matchHeight.js"></script>
+  <script src="res/js/isotope.pkgd.min.js"></script>
+  <script src="res/js/imagesloaded.pkgd.min.js"></script>
+  <script src="res/js/flickity.pkgd.min.js"></script>
+  <script src="res/js/jquery.magnific-popup.min.js"></script>
+  <script src="res/js/jquery.validate.min.js"></script>
 
   <!-- BG Parallax JS -->
-  <script src="../res/js/TweenMax.min.js"></script>
-  <script src="../res/js/ScrollMagic.min.js"></script>
-  <script src="../res/js/animation.gsap.min.js"></script>
+  <script src="res/js/TweenMax.min.js"></script>
+  <script src="res/js/ScrollMagic.min.js"></script>
+  <script src="res/js/animation.gsap.min.js"></script>
 
   <!-- Theme -->
-  <script src="../res/js/main.js"></script>
+  <script src="res/js/main.js"></script>
 
   <!-- Countdown -->
-  <script src="../res/js/jquery.countdown.min.js"></script>
-  <script src="../res/js/countdown.js"></script>
+  <script src="res/js/jquery.countdown.min.js"></script>
+  <script src="res/js/countdown.js"></script>
 
 </body>
 

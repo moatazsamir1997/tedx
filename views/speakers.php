@@ -22,7 +22,7 @@
         <div class="features-box speaker-box col-sm-6 col-md-4">
           <div class="overflow-hidden position-relative width-100">
             <div class="img-wrapper">
-              <img src="../res/images/speakers/kavita_bahl.jpg" alt=""/>
+              <img src="res/images/speakers/kavita_bahl.jpg" alt=""/>
             </div>
             <!-- //.img-wrapper -->
 
