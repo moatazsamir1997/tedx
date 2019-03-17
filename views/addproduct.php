@@ -88,7 +88,7 @@
 				url: 'AnotherProduct.php',
 			
 				success: function(data) {
-				  alert(data);
+				//   alert(data);
 	
 					$("#product").append(data);
 					
