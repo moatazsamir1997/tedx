@@ -49,7 +49,7 @@
 
 			</select>
 		</form>
-		<button type="button"  id="AnotherProduct">add Another Product</button>';
+		<button type="button" name="AnotherProduct"  id="AnotherProduct">add Another Product</button>';
 
 	</div>
 	<script>

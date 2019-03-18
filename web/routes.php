@@ -1,7 +1,7 @@
 <?php
 $config = new Helper();
 
-
+$GLOBALS['ctr'] =0;
 $GLOBALS['ASSET'] = "../tedx/";
 $GLOBALS['tedx'] = "/tedx/";
 $GLOBALS['/tedx'] = "tedx/";
@@ -93,10 +93,10 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLO
 }
 
 
-// else if($_SERVER['REQUEST_URI'] == "myajax"){
-// 	echo 1;
-// 	include('views/'.'addAnotherProduct'.".php");
-// }
+else if($_SERVER['REQUEST_URI'] == "myajax"){
+	echo 1;
+	include('views/'.'addAnotherProduct'.".php");
+}
 // else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['Options'].'/'.$GLOBALS['addValue']){
 
 // 	Helper::includeClass('product\product');
