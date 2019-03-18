@@ -49,8 +49,8 @@ if (isset($_GET['delid']))
 <body>
 <?php if (isset($alertMessage)) echo $alertMessage ?>
     <br>
-    <a class="btn btn-success" href="Writing About Us.php">Writing</a>
-    <a class="btn btn-success" href="About Us.php">Displaying</a>
+    <!-- <a class="btn btn-success" href="Writing About Us.php">Writing</a>
+    <a class="btn btn-success" href="About Us.php">Displaying</a> -->
     <br><br>
 
     <!-- <table class="table table-striped table-bordered">

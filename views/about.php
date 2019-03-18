@@ -142,7 +142,7 @@
             </div>
             <!-- //.col-sm-6 -->
            <?php include('views\ckeditor\codes\static pages\About Us.php');?>
-            <button href ="" >ckeditor</button>
+            <!-- <button href ="" >ckeditor</button> -->
             
           </div>
           <!-- //.row -->
