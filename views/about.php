@@ -141,7 +141,7 @@
               </p>
             </div>
             <!-- //.col-sm-6 -->
-           <?php //include('..\ckeditor\codes\static pages\About Us.php');?>
+           <?php include('views\ckeditor\codes\static pages\About Us.php');?>
             <button href ="" >ckeditor</button>
             
           </div>
