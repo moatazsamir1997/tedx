@@ -25,45 +25,42 @@
 		<h1><b>Add Product</b></h1>
 		<br><br>
 		<hr><br>
-		<form action='web\product.php' method='POST'>
+		<form action='<?php echo $GLOBALS['ASSET'].$GLOBALS['addNewProduct'].$GLOBALS['submit'];?>' method='POST'>
 			<p><b>product name </b></p>
 			<input type="text" name="productname" placeholder="Enter product name here" required>
 			<br><br>
 			<fieldset>
 				<label><b>Product Type</b></label>
-				<select id="productType" name="productType">
+				<select name="productType">
 					<optgroup label="Product Type">
-						<option value="shirt">shirt</option>
-						<option value="cups">cups</option>
-						<option value="ticket">ticket</option>
+					<?php foreach ($data as $productType) { ?> 
+                    	<option value="<?php echo $productType["id"] ?>"><?php echo $productType["name"] ?></option>
+                	<?php }?>
 					</optgroup>
 				</select>
 			</fieldset>
-			<label>Quantity:</label>
-            <input type="text" name="quantity" placeholder="Quanitiy" required>
-            <label>price:</label>
-            <input type="number" name="price" placeholder="Price" required>
+			
 			<?php echo'<div id="product"></div><br>';  ?>
-			<button class="submit" type="submit" name="next1" value="submit">next</button>
+			<button class="submit" type="submit" name="next" value="submit">next</button>
 			<br><br>
 
 			</select>
 		</form>
-		<button type="button" name="AnotherProduct"  id="AnotherProduct">add Another Product</button>';
+		<button type="button" name="AnotherOption"  id="AnotherOption">add Option</button>';
 
 	</div>
 	<script>
 
 		var myctr=1;
 		$(document).ready(function () {
-			$("#AnotherProduct").click(function () {
+			$("#AnotherOption").click(function () {
 				$.ajax({
 					type: 'POST',
 					data:({ctr: myctr}),
-					url: 'views/AnotherProduct.php',
+					url: 'views/AnotherOption.php',
 
 					success: function (data) {
-						//   alert(data);
+
 						$("#product").append(data);
 					}
 
