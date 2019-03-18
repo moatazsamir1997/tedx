@@ -1,6 +1,8 @@
 <?php
 
-  $GLOBALS['ctr']++;
+  
+  $ctr++;
+
     
     echo  '<p><b>Opton name</b></p>';
     echo  "<input type='text' name='optionName.$ctr' placeholder='option name' required>";

@@ -57,9 +57,9 @@
 		$(document).ready(function () {
 			$("#AnotherProduct").click(function () {
 
-
 				$.ajax({
 					type: 'POST',
+					// data:'ctr='+$("#ctr").val();,
 					url: 'views/AnotherProduct.php',
 
 					success: function (data) {

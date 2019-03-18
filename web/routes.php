@@ -1,7 +1,6 @@
 <?php
 $config = new Helper();
 
-$GLOBALS['ctr'] =0;
 $GLOBALS['ASSET'] = "../tedx/";
 $GLOBALS['tedx'] = "/tedx/";
 $GLOBALS['/tedx'] = "tedx/";
