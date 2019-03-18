@@ -54,12 +54,12 @@
 	</div>
 	<script>
 
+		var myctr=1;
 		$(document).ready(function () {
 			$("#AnotherProduct").click(function () {
-				var ctr=0;
 				$.ajax({
 					type: 'POST',
-					data:({ctr}),
+					data:({ctr: myctr}),
 					url: 'views/AnotherProduct.php',
 
 					success: function (data) {
@@ -68,6 +68,7 @@
 					}
 
 				});
+				myctr++;
 			});
 		});
 

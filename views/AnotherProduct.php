@@ -19,9 +19,6 @@
           </fieldset>
           <br><br>";
          
-      
-
-var_dump($ctr);
-  
+    
   
 ?>
