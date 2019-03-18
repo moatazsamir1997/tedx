@@ -141,7 +141,9 @@
               </p>
             </div>
             <!-- //.col-sm-6 -->
+           <?php include('..\ckeditor\codes\static pages\About Us.php');?>
             <button href ="" >ckeditor</button>
+            
           </div>
           <!-- //.row -->
         </div>
@@ -192,10 +194,10 @@
               Jamia Millia Islamia
             </p>
             <br>
-            <a href="https://goo.gl/maps/4Y14DhZe4Fu" target="_blank"
+            <!-- <a href="https://goo.gl/maps/4Y14DhZe4Fu" target="_blank"
                 class="btn btn-outline-white sm-btn-medium btn-large margin-4-5 no-margin-bottom no-margin-rl">
               View location on map
-            </a>
+            </a> -->
           </div>
           <!-- //.col-md-8 -->
         </div>
