@@ -21,6 +21,7 @@ $GLOBALS['contact'] = "contact";
 $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
 $GLOBALS['addNewProduct'] = 'addNewProduct';
+$GLOBALS['addValue'] = 'addValue';
 
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
@@ -59,6 +60,7 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
 	$ProductTypes = $ProductType->getAllTypes();
 	Helper::view('addProduct' , $ProductTypes);
 }
+
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType']){
 	Helper::view('addProductType');
 }
@@ -70,36 +72,30 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLO
 	Helper::route('product');
 }
 
-
-
-
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'] ) 
-{
-	Helper::includeClass('ProductType');
-	Helper::includeClass('Product');
-	$productType = new ProductType();
-	$product = new Product();
-	if(isset($_POST['addProduct']) && !empty($_POST))
-	{
-		$product->store($_POST);
-		Helper::view('addOptions');
-	}
-	else
-	{
-		$productTypes = $productType->getColumnData('name');
-		Helper::view('productgeninsert', $productTypes);
-	} 
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].'/'.$GLOBALS['addOptions'] ){
+	$_SESSION['productData'] = array('name' => $_POST['productName'],'productTypeId' => $_POST['productTypeId']);
+	var_dump($_SESSION['productData']);
+	$numOfOptions = (integer)$_POST['optionNumbers'];
+	include('views/'.'addOptionDetails'.".php");
 }
-
-
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'].$GLOBALS['submit']) 
-{
-	if(isset($_POST['Options']) && !empty($_POST))
-	{
-		$numOfOptions = (integer)$_POST['numOfOptions'];
-		include('views/'.'addOptionValuesSubmit'.".php");
-	}
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].'/'.$GLOBALS['addOptions'].$GLOBALS['submit']){
+	var_dump($_POST);
+	Helper::includeClass('product/productoptions');
+	$Obj = new ProductOptions();
+	$Obj->store();
 }
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue']){
+
+	Helper::includeClass('product\product');
+	$product = (new Product())->getProducts();
+	Helper::view('addOptionValues',$product);
+}
+// else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['Options'].'/'.$GLOBALS['addValue']){
+
+// 	Helper::includeClass('product\product');
+// 	$product = (new Product())->getProducts();
+// 	Helper::view('addOptionValues',$product);
+// }
 
 
 

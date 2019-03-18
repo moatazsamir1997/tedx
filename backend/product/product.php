@@ -7,13 +7,15 @@ class Product extends DBHelper implements Icrud
     private $quantity;
     private $currencyId;
     private $productTypeId;
+    private $productOptionsIds;
 
     public function __construct()
     {
         $this->tableName = 'Product';
+        $this->productOptionsIds = [];
         $this->columnNamesArr = array('name','price','quantity','productTypeId');
     }
-
+    
     public function store($request)
     {
         $this->name = $request['name'];
@@ -28,6 +30,11 @@ class Product extends DBHelper implements Icrud
     {
         $valueArr = array('ss', 50, 100, 44);
         $this->dynamicUpdate($this->tableName, $this->columnNamesArr, $valueArr , $where = 'id = 1' );
+    }
+
+    public function getProducts()
+    {
+        return $this->getData($this->tableName , 'name');
     }
 
     public function delete($request){}

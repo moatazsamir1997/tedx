@@ -5,12 +5,12 @@
 </head>
 
 
-<body background="..\res\images\addproduct.jpg" >
+<body >
 
 	<div class="addproduct">
 		<h1><b>Add Options</b></h1>
 		<br><br><hr><br>	
-		<form action = '..\web\product.php' method ='POST'>
+		<form action ='../addNewProduct/addOptions/submit' method ='POST'>
             <?php for ($i=0; $i <$numOfOptions; $i++) { ?>
                 <label><p><b>Option name</b></p></label>
                 <input type="text" name="<?php echo 'name'.$i;?>" placeholder="Enter Option name here" required>

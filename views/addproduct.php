@@ -9,13 +9,13 @@
 	<div class="addproduct">
 		<h1><b>Add Product</b></h1>
 		<br><br><hr><br>	
-		<form action ='<?php echo$GLOBALS['ASSET'].$GLOBALS['addNewProduct'].$GLOBALS['submit'];?>' method ='POST'>
+		<form action ='<?php echo $GLOBALS['ASSET'].$GLOBALS['addNewProduct'].'/'.$GLOBALS['addOptions'];?>' method ='POST'>
 			<p><b>product name </b></p>
-			<input type="text" name="productname" placeholder="Enter product name here" required>
+			<input type="text" name="productName" placeholder="Enter product name here" required>
 			<br><br>
 			<fieldset>
 				<label for="productType"><b>Product Type</b></label>
-				<select id="productType" name="productType">
+				<select name="productTypeId">
 					<optgroup label="Product Type">
 					<?php foreach ($data as $key => $productType) {?>
 						<option value="<?php echo $productType['id'];?>"><?php echo $productType['name'];?></option>
@@ -25,7 +25,6 @@
 			</fieldset>
 			<br><br>
 			
-			<br><br>
 			<p><b>Add Number of Options</b></p>
 			<input type="number" name="optionNumbers" min="1" placeholder="Enter number of options here">
 			<br><br>

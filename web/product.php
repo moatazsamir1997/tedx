@@ -1,4 +1,6 @@
 <?php
+
+/*
 include('app\helpers\helper.php');
 // Helper::includeClass('product/Product');
 // Helper::includeClass('product/ProductOptions');
@@ -28,3 +30,4 @@ if (isset($_POST['submitProductTypeName'])) {
     $productType->store($_POST);
     include('views/'.'product'.".php");
 }
+*/
