@@ -1,11 +1,12 @@
 <?php
-  echo  '<p><b>product name </b></p>
-          <input type="text" name="productname" placeholder="Enter product name here" required>
+
+  echo  '<p><b>Opton name</b></p>
+          <input type="text" name="optionName" placeholder="option name" required>
           <br><br>
           <fieldset>
-            <label for="productType"><b>Product Type</b></label>
-            <select id="productType" name="productType">
-              <optgroup label="Product Type">
+            <label><b>Option Type</b></label>
+            <select name="OptionType">
+              <optgroup label="option Type">
               <option value="shirt">shirt</option>
               <option value="cups">cups</option>
               <option value="ticket">ticket</option>
@@ -13,11 +14,7 @@
             </select>
           </fieldset>
           <br><br>
-          
-          <br><br>
-          <p><b>Add Number of Options</b></p>
-          <input type="number" name="optionNumbers" min="1" placeholder="Enter number of options here">
-          <br><br>
+         
         ';
   
 ?>

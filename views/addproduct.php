@@ -30,7 +30,7 @@
 			<input type="text" name="productname" placeholder="Enter product name here" required>
 			<br><br>
 			<fieldset>
-				<label for="productType"><b>Product Type</b></label>
+				<label><b>Product Type</b></label>
 				<select id="productType" name="productType">
 					<optgroup label="Product Type">
 						<option value="shirt">shirt</option>
@@ -39,19 +39,17 @@
 					</optgroup>
 				</select>
 			</fieldset>
-			<br><br>
-
-			<br><br>
-			<p><b>Add Number of Options</b></p>
-			<input type="number" name="optionNumbers" min="1" placeholder="Enter number of options here">
-			<br><br>
+			<label>Quantity:</label>
+            <input type="text" name="quantity" placeholder="Quanitiy" required>
+            <label>price:</label>
+            <input type="number" name="price" placeholder="Price" required>
 			<?php echo'<div id="product"></div><br>';  ?>
 			<button class="submit" type="submit" name="next1" value="submit">next</button>
 			<br><br>
 
 			</select>
 		</form>
-		<?php echo '<button type="button"  name="anotherProduct" id="AnotherProduct">add Another Product</button>';?>
+		<button type="button"  id="AnotherProduct">add Another Product</button>';
 
 	</div>
 	<script>
@@ -66,11 +64,7 @@
 
 					success: function (data) {
 						//   alert(data);
-
 						$("#product").append(data);
-
-
-
 					}
 
 				});
