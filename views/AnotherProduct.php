@@ -1,8 +1,8 @@
 <?php
 
   
-  $ctr++;
-
+  $ctr = $_POST['ctr'];
+ 
     
     echo  '<p><b>Opton name</b></p>';
     echo  "<input type='text' name='optionName.$ctr' placeholder='option name' required>";
@@ -19,9 +19,9 @@
           </fieldset>
           <br><br>";
          
-        
+      
 
-
+var_dump($ctr);
   
   
 ?>

@@ -19,7 +19,7 @@
 </head>
 
 
-<body background="res\images\addproduct.jpg">
+<body>
 
 	<div class="addproduct">
 		<h1><b>Add Product</b></h1>
@@ -56,10 +56,10 @@
 
 		$(document).ready(function () {
 			$("#AnotherProduct").click(function () {
-
+				var ctr=0;
 				$.ajax({
 					type: 'POST',
-					// data:'ctr='+$("#ctr").val();,
+					data:({ctr}),
 					url: 'views/AnotherProduct.php',
 
 					success: function (data) {
