@@ -57,7 +57,7 @@ if ($_GET['id'])
 
     <br>
     <!-- <a class="btn btn-success" href="Writing About Us.php">Writing</a> -->
-    <a class="btn btn-success" href="about.php">Displaying</a>
+    <a class="btn btn-success" href="<?php echo $GLOBALS['ASSET'].$GLOBALS['about'];?>">Displaying</a>
     <br><br>
     <?php    if (isset($submit_error)) echo $submit_error;  ?>
     <?php    if (isset($empty_error)) echo $empty_error;  ?>
