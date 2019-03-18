@@ -133,15 +133,16 @@
               </p>
 
               <p class="font-family-alt margin-5-5 no-margin-bottom no-margin-rl sm-text-large text-extra-large text-gray-dark-2">
-                We are focused on proffering a TED stage to speakers of varied backgrounds
+                <!-- We are focused on proffering a TED stage to speakers of varied backgrounds
                 and experiences for inspirational and intellectual acceleration. Our
                 event strategically allocates a window for collaboration of arts,
                 sciences, entrepreneurship and women empowerment - ideas that are close
-                to our central theme: <b>Igniting Minds</b>.
+                to our central theme: <b>Igniting Minds</b>. -->
+                <?php include('views\ckeditor\codes\static pages\About Us.php');?>
               </p>
             </div>
             <!-- //.col-sm-6 -->
-           <?php include('views\ckeditor\codes\static pages\About Us.php');?>
+          
             <!-- <button href ="" >ckeditor</button> -->
             
           </div>

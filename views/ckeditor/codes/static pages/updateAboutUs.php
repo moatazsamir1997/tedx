@@ -56,8 +56,8 @@ if ($_GET['id'])
 <body>
 
     <br>
-    <a class="btn btn-success" href="Writing About Us.php">Writing</a>
-    <a class="btn btn-success" href="About Us.php">Displaying</a>
+    <!-- <a class="btn btn-success" href="Writing About Us.php">Writing</a> -->
+    <a class="btn btn-success" href="about.php">Displaying</a>
     <br><br>
     <?php    if (isset($submit_error)) echo $submit_error;  ?>
     <?php    if (isset($empty_error)) echo $empty_error;  ?>

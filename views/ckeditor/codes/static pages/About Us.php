@@ -72,10 +72,10 @@ if (isset($_GET['delid']))
         while ($row= mysqli_fetch_assoc($result))
         {
             // echo "<tr>";
-           
+            // /updateAboutUs.php
             // echo $row["id"];
             echo $row["htmlCode"];
-            echo '<br><br><a href="updateAboutUs.php?id='.$row['id'].'" type="button" class="btn btn-primary btn-sm">
+            echo '<br><br><a href="ckeditor\codes\static pages\updateAboutUs.php?id='.$row['id'].'" type="button" class="btn btn-primary btn-sm">
             <span class="fa fa-edit"></span></a> ';
             
             // echo '<td><a href="About Us.php?delid='.$row['id'].'" type="button" class="btn btn-danger btn-sm">
