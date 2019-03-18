@@ -55,6 +55,7 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['register']){
 	include('views/register.php'); 
 }
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
+	$GLOBALS['ctr'] = 0;
 	Helper::includeClass('product\productType');
 	$ProductType = new ProductType();
 	$ProductTypes = $ProductType->getAllTypes();
@@ -90,6 +91,12 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLO
 	$product = (new Product())->getProducts();
 	Helper::view('addOptionValues',$product);
 }
+
+
+// else if($_SERVER['REQUEST_URI'] == "myajax"){
+// 	echo 1;
+// 	include('views/'.'addAnotherProduct'.".php");
+// }
 // else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['Options'].'/'.$GLOBALS['addValue']){
 
 // 	Helper::includeClass('product\product');
