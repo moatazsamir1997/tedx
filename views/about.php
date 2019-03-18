@@ -141,6 +141,7 @@
               </p>
             </div>
             <!-- //.col-sm-6 -->
+            <button href ="" >ckeditor</button>
           </div>
           <!-- //.row -->
         </div>
