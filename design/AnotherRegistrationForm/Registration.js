@@ -5,7 +5,6 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
 $(".next").click(function(){
-	
 	if(animating) return false;
 	animating = true;
 	
@@ -17,7 +16,7 @@ $(".next").click(function(){
 	
 	//show the next fieldset
 	next_fs.show(); 
-	
+	current_fs.hide();
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -40,10 +39,9 @@ $(".next").click(function(){
 			animating = false;
 		}, 
 		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
+		// easing: 'easeInOutBack'
 	});
 });
-
 
 $(".previous").click(function(){
 	if(animating) return false;
@@ -57,6 +55,7 @@ $(".previous").click(function(){
 	
 	//show the previous fieldset
 	previous_fs.show(); 
+	current_fs.hide();
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -76,7 +75,7 @@ $(".previous").click(function(){
 			animating = false;
 		}, 
 		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
+		// easing: 'easeInOutBack'
 	});
 });
 
