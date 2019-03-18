@@ -46,15 +46,15 @@
       <h2 class="fs-title">Add address</h2>
       <h3 class="fs-subtitle">This step 1</h3>
       <select id="type">
-    <option value="item0">--Select an Item--</option>
+    <option value="item0">--Select a country--</option>
     <option value="item1">egypt</option>
     <option value="item2">item2</option>
     <option value="item3">item3</option>
 </select>
 
-<select id="size">
-    <option value="">-- select one -- </option>
-</select>
+<!-- <select id="size">
+    <option value="">-- select a city -- </option>
+</select> -->
 <div id="AnotherOne"></div>
         
       <input type="button" name="next" class="next action-button" value="Next" />
@@ -92,42 +92,8 @@
     </fieldset>
   </form>
 <script src="../SamePage/samePage2.js"></script>
-  <script>
-   $("#type").val('item0');
-  $(document).ready(function () {
-   
-    $("#type").change(function () {
-        var val = $(this).val();
-        $.ajax({
-          type: 'POST',
-          url: 'OtherAddresses.php',
-          data: {func:
-        'AnotherAddress',
-        'AddressValue': val
-    },
-          success: function(data) {
-         
-        if (val == "item1") {
-            $("#size").html(data);
-            $("#AnotherOne").html(data);
-        } else if (val == "item2") {
-            $("#size").html("<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>");
-        } else if (val == "item3") {
-            $("#size").html("<option value='test'>item3: test 1</option><option value='test2'>item3: test 2</option>");
-        } else if (val == "item0") {
-            $("#size").html("<option value=''>--select one--</option>");
-        }
-          },
-          
-          error: function()
-          {
-            alert("error");
-          } 
-    });
-    				
-		});
-});
-</script>  
+  <script src="../AddressSelect\AddressSelect.js">
+</script> 
   </body>
 </html>
 
