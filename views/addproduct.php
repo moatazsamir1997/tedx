@@ -49,7 +49,9 @@
 ?>
 			<button class="submit" type="submit" name="next1" value="submit">next</button>
 			<br><br>
+			<select id="mySelect" name="mySelect">
 
+</select>
 		</form>
 		<?php
 	

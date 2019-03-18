@@ -45,15 +45,17 @@
     <fieldset>
       <h2 class="fs-title">Add address</h2>
       <h3 class="fs-subtitle">This step 1</h3>
-      <select name="country">
-          <option value="1">egypt</option>
-        </select>
-        <select name="city">
-          <option value="2">Cairo</option>
-          <option value="3">Alexandria</option>
-          <option value="4">Suez</option>
-          <option value="5">Giza</option>
-        </select>
+      <select id="type">
+    <option value="item0">--Select an Item--</option>
+    <option value="item1">item1</option>
+    <option value="item2">item2</option>
+    <option value="item3">item3</option>
+</select>
+
+<select id="size">
+    <option value="">-- select one -- </option>
+</select>
+        
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset style="display: none;">
@@ -89,7 +91,22 @@
     </fieldset>
   </form>
 <script src="../SamePage/samePage2.js"></script>
-    
+  <script>
+  $(document).ready(function () {
+    $("#type").change(function () {
+        var val = $(this).val();
+        if (val == "item1") {
+            $("#size").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
+        } else if (val == "item2") {
+            $("#size").html("<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>");
+        } else if (val == "item3") {
+            $("#size").html("<option value='test'>item3: test 1</option><option value='test2'>item3: test 2</option>");
+        } else if (val == "item0") {
+            $("#size").html("<option value=''>--select one--</option>");
+        }
+    });
+});
+</script>  
   </body>
 </html>
 
