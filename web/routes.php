@@ -21,7 +21,7 @@ $GLOBALS['contact'] = "contact";
 $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
 $GLOBALS['addNewProduct'] = 'addNewProduct';
-
+$GLOBALS['signup'] = 'signup';
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
 {
@@ -102,4 +102,8 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'].$GLOB
 }
 
 
+elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['signup'] ) {
 
+    // Helper::view('signup');
+    include("views/signup.php");
+}
