@@ -13,6 +13,7 @@ body {
 
 form {
   max-width: 300px;
+  max-height: 2150px;
   margin: 10px auto;
   padding: 10px 20px;
   background: #f4f7f8;
