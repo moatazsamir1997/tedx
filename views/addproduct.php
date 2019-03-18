@@ -19,7 +19,7 @@
 </head>
 
 
-<body>
+<body background="res\images\addproduct.jpg" >
 
 	<div class="addproduct">
 		<h1><b>Add Product</b></h1>
