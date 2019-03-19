@@ -103,16 +103,16 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLO
 	$productOption = new ProductOptions();
 	$productId = $_POST['productId'];
 	$arrOfIds = $productOption->getRelatedIds($productId);
-	// $arrOfOptionsData = [];
-	// for ($i=0; $i < sizeof($arrOfIds) ; $i++) { 
-	// 	array_push($arrOfOptionsData , $productOption->getById($arrOfIds[$i]));
-	// }
-	var_dump($arrOfIds);
-	// Helper::view('retrieveValues' , $arrOfOptionsData );
+	$arrOfOptionsData = [];
+	foreach ($arrOfIds as $key) {
+		array_push($arrOfOptionsData ,$productOption->getById($key['optionsId']));
+	}
+	Helper::view('retrieveValues' , $arrOfOptionsData );
 }
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['insert']){
 
+	
 	var_dump($_POST);
 }
 
