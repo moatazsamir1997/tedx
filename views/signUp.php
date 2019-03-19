@@ -41,11 +41,7 @@
       <input type="text" name="email" placeholder="Email" />
       <input type="password" name="pwd" placeholder="Password" />
       <!-- <input type="password" name="cpwd" placeholder="Confirm Password" /> -->
-      <input type="text" name="userTypeId" placeholder="userTypeId" />
-      <input type="text" name="userAddressId" placeholder="userAddressId" />
-      <input type="text" name="genderId" placeholder="genderId" />
-      <input type="text" name="departmentId" placeholder="departmentId" />
-      <input type="text" name="eventId" placeholder="eventId" />
+      
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
