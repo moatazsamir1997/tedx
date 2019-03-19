@@ -28,13 +28,10 @@ class DBHelper
 
     public function getId($tableName , $columnName , $columnValue)
     {
-        // if ($this->config == NULL) {
-        //     $this->config = new Helper();
-        // }
-        // $User = $this->config->getInstance();
+        
         $User = Helper::getInstance();;
         
-        $query = $User->query("SELECT `id` FROM `$tableName` WHERE `$columnName` = $columnValue ");
+        $query = $User->query("SELECT `id` FROM `$tableName` WHERE `$columnName` = '$columnValue' ");
          
         $data = $query->fetch(PDO::FETCH_ASSOC);
         
@@ -116,7 +113,7 @@ class DBHelper
     {
         $model = Helper::getInstance();
         
-        $model->quote("UPDATE `$tableName` SET `$columnName` = $value WHERE `$WHERE_ColumnName` = $WHERE_Value");
+        $model->query("UPDATE `$tableName` SET `$columnName` = $value WHERE `$WHERE_ColumnName` = $WHERE_Value");
     }
   
 

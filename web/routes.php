@@ -21,6 +21,7 @@ $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
 $GLOBALS['addNewProduct'] = 'addNewProduct';
 $GLOBALS['addValue'] = 'addValue';
+$GLOBALS['ay7aga'] = 'ay7aga';
 
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
@@ -61,11 +62,18 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
 }
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['submit']){
-	// $_SESSION['productData'] = array('name' => $_POST['productName'],'productTypeId' => $_POST['productTypeId']);
-	var_dump($_POST);
-	// var_dump($_SESSION['productData']);
-	// $numOfOptions = (integer)$_POST['optionNumbers'];
-	// include('views/'.'addOptionDetails'.".php");
+	Helper::includeClass('product/ProductOptions');
+	Helper::includeClass('product/Product');
+	$Product = new Product();
+	$obj = new ProductOptions();
+	$Product->store($_POST);
+	$obj->insertOptionsData($_POST , $Product);
+	
+	$productId = $Product->getProductId($_POST['name']);
+	
+	$obj->insertProductId($productId['id']);
+
+	Helper::route('product');
 	
 }
 
@@ -80,24 +88,14 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLO
 	Helper::route('product');
 }
 
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].'/'.$GLOBALS['addOptions'].$GLOBALS['submit']){
-	var_dump($_POST);
-	Helper::includeClass('product/productoptions');
-	$Obj = new ProductOptions();
-	$Obj->store();
-}
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue']){
 
 	Helper::includeClass('product\product');
 	$product = (new Product())->getProducts();
-	Helper::view('addOptionValues',$product);
+	Helper::view('addValues',$product);
 }
 
 
-else if($_SERVER['REQUEST_URI'] == "myajax"){
-	echo 1;
-	include('views/'.'addAnotherProduct'.".php");
-}
 // else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['Options'].'/'.$GLOBALS['addValue']){
 
 // 	Helper::includeClass('product\product');
@@ -107,3 +105,10 @@ else if($_SERVER['REQUEST_URI'] == "myajax"){
 
 
 
+
+
+elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['ay7aga'] ) {
+
+	// Helper::view('signup');
+	include("views/signup.php");
+}

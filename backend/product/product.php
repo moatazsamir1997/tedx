@@ -1,6 +1,6 @@
 <?php
 require_once('backend\product\DBHelper.php');
-include('app\interface\Icrud.php');
+require_once('app\interface\Icrud.php');
 class Product extends DBHelper implements Icrud
 {
     private $price;
@@ -16,6 +16,22 @@ class Product extends DBHelper implements Icrud
         $this->columnNamesArr = array('name','price','quantity','productTypeId');
     }
     
+
+
+    public function insertOptionId($optionId)
+    {
+        array_push($this->productOptionsIds , $optionId);
+    }
+    
+    // public function inserOptionIds($request)
+    // {
+    //     for ($i=0; $i < $request['ctr'] ; $i++) { 
+    //         # code...
+    //     }
+    //     inserOptionId($optionId)
+    //     array_push($this->productOptionsIds , $optionId);
+    // }
+
     public function store($request)
     {
         $this->name = $request['name'];
@@ -35,6 +51,11 @@ class Product extends DBHelper implements Icrud
     public function getProducts()
     {
         return $this->getData($this->tableName , 'name');
+    }
+
+    public function getProductId($name)
+    {
+        return $this->getId($this->tableName , 'name' , $name);
     }
 
     public function delete($request){}

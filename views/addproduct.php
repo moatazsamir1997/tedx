@@ -27,11 +27,11 @@
 		<hr><br>
 		<form action='<?php echo $GLOBALS['ASSET'].$GLOBALS['addNewProduct'].$GLOBALS['submit'];?>' method='POST'>
 			<p><b>product name </b></p>
-			<input type="text" name="productname" placeholder="Enter product name here" required>
+			<input type="text" name="name" placeholder="Enter product name here" required>
 			<br><br>
 			<fieldset>
 				<label><b>Product Type</b></label>
-				<select name="productType">
+				<select name="productTypeId">
 					<optgroup label="Product Type">
 					<?php foreach ($data as $productType) { ?> 
                     	<option value="<?php echo $productType["id"] ?>"><?php echo $productType["name"] ?></option>
@@ -39,7 +39,10 @@
 					</optgroup>
 				</select>
 			</fieldset>
-			
+			<label><b>Quantity:</b></label>
+			<input type="number" name="quantity" placeholder="quantity" required>
+			<label><b>price:</b></label>
+			<input type="number" name="price" placeholder="price" required>
 			<?php echo'<div id="product"></div><br>';  ?>
 			<button class="submit" type="submit" name="next" value="submit">next</button>
 			<br><br>
@@ -47,6 +50,7 @@
 			</select>
 		</form>
 		<button type="button" name="AnotherOption"  id="AnotherOption">add Option</button>';
+		
 
 	</div>
 	<script>

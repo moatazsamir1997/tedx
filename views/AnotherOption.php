@@ -20,6 +20,7 @@
             </select>
           </fieldset>
           <br><br>";
+          echo "<input type='hidden' name ='ctr' value = '$ctr'>";
          
   
 ?>

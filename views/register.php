@@ -53,7 +53,7 @@
           </p>
           <div class="margin-5 no-margin-bottom no-margin-rl text-center">
             <span class="btn btn-outline-base-color sm-btn-medium btn-large no-margin-rl">
-              Registration closed
+              <a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['ay7aga']; ?>">register</a>
             </span>
           </div>
         </div>
