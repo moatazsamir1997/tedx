@@ -1,5 +1,7 @@
 <?php
 include('product\DBHellper.php');
+include('app\interface\Icrud.php');
+
 class User extends DBHelper implements Icrud
 {
 	private $fname;  
