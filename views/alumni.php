@@ -35,7 +35,7 @@
             this event a special and successful celebration.</p>
 
             <p>Please enter your particulars and we'll get in touch to find opportunities
-            for your contribution in TEDxJMI.</p>
+            for your contribution in TEDxManaretAlfarouk.</p>
           </div>
         </div>
         <!-- //.col-md-10 -->

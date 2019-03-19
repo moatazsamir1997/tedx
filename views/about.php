@@ -127,7 +127,7 @@
           <div class="row">
             <div class="col-md-12">
               <p class="font-family-alt margin-5-5 no-margin-bottom no-margin-rl sm-text-large text-extra-large text-gray-dark-2">
-                TEDxJMI brings together a collection of doers, thinkers, innovators,
+                TEDxManaretAlfarouk brings together a collection of doers, thinkers, innovators,
                 explorers, visionaries, teachers, learners and seeks to illuminate,
                 inspire, change perceptions, incite action and foster new connections.
               </p>

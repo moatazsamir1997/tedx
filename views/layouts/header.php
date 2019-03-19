@@ -71,10 +71,6 @@
         <div id="navbar" class="navbar-collapse collapse col-lg-9 pull-right">
           <ul class="nav navbar-nav font-family-alt letter-spacing-1 text-uppercase font-weight-700">
               <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['about']; ?>" class="line-height-unset">About</a></li>
-              <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['speakers']; ?>" class="line-height-unset">Speakers</a></li>
-              <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['ourTeam']; ?>" class="line-height-unset">Our Team</a></li>
-              <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['alumni']; ?>" class="line-height-unset">Alumni</a></li>
-              <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['contact']; ?>" class="line-height-unset">Contact Us</a></li>
               <li><a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['product']; ?>" class="line-height-unset">Product</a></li>
               <li class="bg-base-color">
                   <a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['register']; ?>" class="line-height-unset width-100">

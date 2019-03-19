@@ -8,7 +8,7 @@
             Date &amp; Time
           </span>
           <p class="margin-3 font-family-alt no-margin-bottom no-margin-rl title-small text-gray-dark-2">
-            October 16, 2017<br>
+            October 16, 2019<br>
             10 AM to 5 PM
           </p>
         </div>
@@ -19,8 +19,7 @@
             Venue
           </span>
           <p class="margin-3 font-family-alt no-margin-bottom no-margin-rl title-small text-gray-dark-2">
-            Dr. M. A. Ansari Auditorium,<br>
-            Jamia Millia Islamia
+            Fifth Settelment
           </p>
         </div>
         <!-- //.col-sm-4 -->
