@@ -18,17 +18,27 @@ class User extends DBHelper implements Icrud
     public function __construct()
     {
         $this->tableName = 'user';
-        $this->columnNamesArr = array('name','userName','email','userTypeId','userAddressId','genderId','departmentId','eventId');
+        $this->columnNamesArr = array('fname','lname','userName','email','pwd'
+         ,'userTypeId','userAddressId','genderId','departmentId','eventId'
+    );
     }
 
     public function store($request)
     {
-        // $this->name = $request['name'];
-        // $this->price = $request['price'];
-        // $this->quantity = $request['quantity'];
-        // $this->productTypeId = $request['productTypeId'];
-		// $this->columnValuesArr = array( $this->name, $this->price, $this->quantity, $this->productTypeId); 		
-		// $this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
+        $this->fname = $request['fname'];
+        $this->lname = $request['lname'];
+        $this->fname = $request['userName'];
+        $this->email = $request['email'];
+        $this->pwd = $request['pwd'];
+       
+        $this->lname = $request['userTypeId'];
+        $this->email = $request['userAddressId'];
+        $this->pwd = $request['genderId'];
+        $this->lname = $request['departmentId'];
+        $this->email = $request['eventId'];
+        $this->columnValuesArr = array( $this->fname, $this->lname,$this->userName, $this->email, $this->pwd
+        ,$this->userTypeId,$this->userAddressId,$this->genderId,$this->departmentId,$this->eventId);	
+		$this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
     }
 
     public function update($request)

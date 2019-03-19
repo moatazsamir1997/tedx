@@ -4,11 +4,12 @@ $(document).ready(function () {
   $("#type").change(function () {
   
       var val = $(this).val();
-    
+      
       $.ajax({
         type: 'POST',
         url: 'OtherAddresses.php',
-        data: {func:
+        data: {
+          func:
       'AnotherAddress',
     //   func2:
     //   'AnotherAddress2',
