@@ -1,5 +1,7 @@
 <?php
 require_once('backend\product\DBHelper.php');
+include('app\interface\Icrud.php');
+
 class User extends DBHelper implements Icrud
 {
     private $fname;            
@@ -36,6 +38,8 @@ class User extends DBHelper implements Icrud
         $this->pwd = $request['genderId'];
         $this->lname = $request['departmentId'];
         $this->email = $request['eventId'];
+        $this->columnNamesArr = array('fname','lname','userName','email','pwd'
+        ,'userTypeId','userAddressId','genderId','departmentId','eventId');
         $this->columnValuesArr = array( $this->fname, $this->lname,$this->userName, $this->email, $this->pwd
         ,$this->userTypeId,$this->userAddressId,$this->genderId,$this->departmentId,$this->eventId);	
 		$this->insert($this->columnNamesArr , $this->columnValuesArr , $this->tableName);
