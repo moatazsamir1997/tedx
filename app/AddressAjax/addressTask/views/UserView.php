@@ -45,15 +45,18 @@
     <fieldset>
       <h2 class="fs-title">Add address</h2>
       <h3 class="fs-subtitle">This step 1</h3>
-      <select name="country">
-          <option value="1">egypt</option>
-        </select>
-        <select name="city">
-          <option value="2">Cairo</option>
-          <option value="3">Alexandria</option>
-          <option value="4">Suez</option>
-          <option value="5">Giza</option>
-        </select>
+      <select id="type">
+    <option value="item0">--Select a country--</option>
+    <option value="item1">egypt</option>
+    <option value="item2">item2</option>
+    <option value="item3">item3</option>
+</select>
+
+<!-- <select id="size">
+    <option value="">-- select a city -- </option>
+</select> -->
+<div id="AnotherOne"></div>
+        
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset style="display: none;">
@@ -89,7 +92,8 @@
     </fieldset>
   </form>
 <script src="../SamePage/samePage2.js"></script>
-    
+  <script src="../AddressSelect\AddressSelect.js">
+</script> 
   </body>
 </html>
 

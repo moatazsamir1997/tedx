@@ -55,7 +55,25 @@ class ProductOptions extends DBHelper implements Icrud
         return $this->getId($this->tableName , 'name' , $name);
     }
 
-    
+    public function getRelatedIds($productId)
+    {
+        $arr =[];
+        $db = Helper::getInstance();
+        $query = $db->query("SELECT `id` , `optionsId` FROM `productselectedoptions` WHERE `productId` = '$productId' "); 
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
+        // for ($i=0; $i <sizeof($data) ; $i++) { 
+        //     foreach ($data[$i] as $key => $value) {
+        //         array_push($arr , $value);
+        //     }
+            
+        // }
+        return $data;
+    }
+
+    public function getById($id)
+    {
+        return DBHelper::getAllById($this->tableName,$id);
+    }
 
     public function update($request){}
     public function delete($request){}

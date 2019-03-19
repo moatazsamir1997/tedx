@@ -21,7 +21,8 @@ $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
 $GLOBALS['addNewProduct'] = 'addNewProduct';
 $GLOBALS['addValue'] = 'addValue';
-$GLOBALS['ay7aga'] = 'ay7aga';
+$GLOBALS['insert'] = '/insert';
+
 
 /* Main routes */
 if($_SERVER['REQUEST_URI'] == '/tedx/')
@@ -96,19 +97,24 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLO
 }
 
 
-// else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['Options'].'/'.$GLOBALS['addValue']){
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['submit']){
 
-// 	Helper::includeClass('product\product');
-// 	$product = (new Product())->getProducts();
-// 	Helper::view('addOptionValues',$product);
-// }
-
-
-
-
-
-elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['ay7aga'] ) {
-
-	// Helper::view('signup');
-	include("views/signup.php");
+	Helper::includeClass('product\ProductOptions');
+	$productOption = new ProductOptions();
+	$productId = $_POST['productId'];
+	$arrOfIds = $productOption->getRelatedIds($productId);
+	// $arrOfOptionsData = [];
+	// for ($i=0; $i < sizeof($arrOfIds) ; $i++) { 
+	// 	array_push($arrOfOptionsData , $productOption->getById($arrOfIds[$i]));
+	// }
+	var_dump($arrOfIds);
+	// Helper::view('retrieveValues' , $arrOfOptionsData );
 }
+
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['insert']){
+
+	var_dump($_POST);
+}
+
+
+

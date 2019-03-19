@@ -1,4 +1,4 @@
-console.log('same Page');
+// console.log('same Page');
 // $(document).ready(function(){
 //     $("#parent").click(function(){
 //         $("#choice").hide();
