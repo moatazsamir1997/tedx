@@ -115,9 +115,9 @@ elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['signup'].$GLOBALS
     {
         // echo "test";
       $user = new user;
-      var_dump($user);
+    //   var_dump($user);
 		$user->store($_POST);
-		var_dump($user);
+		// var_dump($user);
 	}
 	include("views/signup.php");
 }
