@@ -75,7 +75,9 @@ class DBHelper
         //tokenizer
    		$colString = implode(" , ", $columnNamesArr);
         $ValuesString = implode(' , ', array_map('quote', $columnValuesArr));
-   		$query = $Model->query("INSERT INTO `$tableName` ($colString) VALUES ($ValuesString)");
+        $sql = "INSERT INTO `$tableName` ($colString) VALUES ($ValuesString)";
+        var_dump($sql);
+   		$query = $Model->query($sql);
             
     }
 
