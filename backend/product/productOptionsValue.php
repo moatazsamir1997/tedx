@@ -12,6 +12,28 @@ class ProductOptionsValue extends DBHelper implements Icrud
         $this->tableName = "productoptionsvalue";
         $this->columnNamesArr = array('value', 'productSelectedOptionsId', 'purchaseId');
     }
+    public function insertValues( $prOpIdsArr , $request)
+    {
+        $db = Helper::getInstance();
+        $ctr=0;
+        foreach ($request as $key => $value) {
+            if ($value != 'next') {
+                if (is_string($value)) {
+                    $value ="'$value'";
+                }
+                $this->value = $value;
+                $this->PrOPId = $prOpIdsArr[$ctr];
+                $this->purchaseId = 1;
+                
+                $sql = "INSERT `productoptionsvalue` (`value`, `productSelectedOptionsId`, `purchaseId`)
+                VALUES($this->value , $this->PrOPId , $this->purchaseId )";
+                var_dump($sql);
+    
+                $db->query($sql);
+                $ctr++;
+            }
+        }
+    }
 
     public function store($request)
     {

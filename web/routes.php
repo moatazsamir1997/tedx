@@ -107,13 +107,23 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLO
 	foreach ($arrOfIds as $key) {
 		array_push($arrOfOptionsData ,$productOption->getById($key['optionsId']));
 	}
+	$prOpIdsArr = [];
+	foreach ($arrOfIds as $key) {
+		
+			$prOpId = $productOption->getRelationids($productId , $key['optionsId']);
+			array_push($prOpIdsArr , $prOpId['id'] );
+		
+	}
+	$_SESSION['arrids'] = $prOpIdsArr;
 	Helper::view('retrieveValues' , $arrOfOptionsData );
 }
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['insert']){
 
-	
-	var_dump($_POST);
+	Helper::includeClass('product/productOptionsValue');
+	$valueObj = new ProductOptionsValue();
+	$valueObj->insertValues($_SESSION['arrids'],$_POST);
+	Helper::route('../product');
 }
 
 
