@@ -64,7 +64,7 @@
             </span> -->
             <br>
             <h4 class="font-weight-300 letter-spacing-1">
-              Jamia Millia Islamia
+              Manarat Alfarouk Islamic School
               <br>Maulana Mohammad Ali Jauhar Marg
               <br>Jamia Nagar
               <br>New Delhi 110025
