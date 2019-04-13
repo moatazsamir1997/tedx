@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 01:14 PM
+-- Generation Time: Apr 14, 2019 at 12:11 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -171,6 +171,13 @@ CREATE TABLE `datepurchase` (
   `isdeleted` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `datepurchase`
+--
+
+INSERT INTO `datepurchase` (`id`, `dateTime`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(1, '0000-00-00', '2019-03-19 04:58:45', '2019-03-19 04:58:45', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -212,8 +219,8 @@ CREATE TABLE `event` (
 --
 
 CREATE TABLE `gender` (
-  `id` int(1) NOT NULL,
-  `name` varchar(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -246,6 +253,20 @@ CREATE TABLE `links` (
   `isdeleted` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `links`
+--
+
+INSERT INTO `links` (`id`, `physicalName`, `friendlyName`, `htmlCode`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(1, 'views/about.php', '/tedx/about', 'xxx', '2019-04-08 02:39:11', '2019-04-08 02:39:11', 0),
+(2, 'views/about.php', '/tedx/', 'x', '2019-04-08 02:53:12', '2019-04-08 02:53:12', 0),
+(3, 'views/speakers.php', '/tedx/speakers', 'x', '2019-04-08 02:54:36', '2019-04-08 02:54:36', 0),
+(4, 'views/ourTeam.php', '/tedx/ourTeam', 'x', '2019-04-08 02:56:01', '2019-04-08 02:56:01', 0),
+(5, 'views/alumni.php', '/tedx/alumni', 'x', '2019-04-08 02:56:33', '2019-04-08 02:56:33', 0),
+(6, 'views/contact.php', '/tedx/contact', 'x', '2019-04-08 02:58:28', '2019-04-08 02:58:28', 0),
+(7, 'views/product.php', '/tedx/product', 'x', '2019-04-08 02:58:56', '2019-04-08 02:58:56', 0),
+(8, 'views/register.php', '/tedx/register', 'x', '2019-04-08 02:59:21', '2019-04-08 02:59:21', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -260,6 +281,13 @@ CREATE TABLE `manufacture` (
   `lastUpdatedDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `isdeleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manufacture`
+--
+
+INSERT INTO `manufacture` (`id`, `name`, `addressId`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(1, 0, 1, '2019-03-19 04:59:45', '2019-03-19 04:59:45', 0);
 
 -- --------------------------------------------------------
 
@@ -289,6 +317,13 @@ CREATE TABLE `paymentmethod` (
   `lastUpdatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isdeleted` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paymentmethod`
+--
+
+INSERT INTO `paymentmethod` (`id`, `name`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(1, 'cash', '2019-03-19 04:57:59', '2019-03-19 04:57:59', 0);
 
 -- --------------------------------------------------------
 
@@ -361,37 +396,11 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `name`, `price`, `quantity`, `currencyId`, `productTypeId`, `createdDate`, `lastUpdatedDate`, `isDeleted`) VALUES
 (1, 'ss', 50, 100, 1, 44, '2019-03-09 11:57:00', '2019-03-09 11:57:00', 0),
 (2, 'mohamed', 112, 2323, 1, 47, '2019-03-09 11:57:53', '2019-03-09 11:57:53', 0),
-(3, 'mohamed', 12, 100, 1, 44, '2019-03-09 11:58:47', '2019-03-09 11:58:47', 0),
-(4, 'mohamed', 12, 100, 1, 44, '2019-03-09 11:59:01', '2019-03-09 11:59:01', 0),
-(5, 'mohamed', 12, 100, 1, 44, '2019-03-09 11:59:38', '2019-03-09 11:59:38', 0),
-(6, 'mohamed', 12, 1, 1, 44, '2019-03-09 11:59:49', '2019-03-09 11:59:49', 0),
-(7, 'mohamed', 12, 1, 1, 44, '2019-03-09 12:01:35', '2019-03-09 12:01:35', 0),
-(8, 'mohamed', 12, 1, 1, 44, '2019-03-09 12:01:55', '2019-03-09 12:01:55', 0),
-(9, 'mohamed', 112312, 100, 1, 45, '2019-03-09 12:04:14', '2019-03-09 12:04:14', 0),
-(10, 'mohamed', 112312, 100, 1, 45, '2019-03-09 12:04:56', '2019-03-09 12:04:56', 0),
-(11, 'mohamed', 11212, 100, 1, 42, '2019-03-10 20:58:25', '2019-03-10 20:58:25', 0),
-(12, 'mytry', 3, 100, 1, 42, '2019-03-10 20:59:34', '2019-03-10 20:59:34', 0),
-(13, 'tedxProduct', 22, 22, 1, 71, '2019-03-10 21:06:38', '2019-03-10 21:06:38', 0),
-(14, '', 0, 0, 1, 42, '2019-03-10 22:58:52', '2019-03-10 22:58:52', 1),
-(15, 'mohamed', 33, 100, 1, 42, '2019-03-10 23:02:29', '2019-03-10 23:02:29', 0),
-(16, 'mohamed', 33, 100, 1, 42, '2019-03-10 23:05:50', '2019-03-10 23:05:50', 0),
-(17, 'mohamed', 66, 12, 1, 42, '2019-03-11 00:32:44', '2019-03-11 00:32:44', 0),
-(18, 'mohamed', 2, 100, 1, 42, '2019-03-11 01:00:33', '2019-03-11 01:00:33', 0),
-(19, 'mohamed', 22, 100, 1, 42, '2019-03-11 02:05:55', '2019-03-11 02:05:55', 0),
-(20, 'mohamed', 22, 100, 1, 42, '2019-03-11 02:06:17', '2019-03-11 02:06:17', 0),
-(21, 'mohamed', 22, 100, 1, 42, '2019-03-11 02:08:08', '2019-03-11 02:08:08', 0),
-(22, 'mohamed', 2, 100, 1, 42, '2019-03-11 02:09:11', '2019-03-11 02:09:11', 0),
-(23, 'mohamed', 2, 100, 1, 42, '2019-03-11 02:09:54', '2019-03-11 02:09:54', 0),
-(24, 'mohamed', 2, 100, 1, 42, '2019-03-11 02:13:37', '2019-03-11 02:13:37', 0),
-(25, 'mohamed', 1, 100, 1, 42, '2019-03-11 02:23:37', '2019-03-11 02:23:37', 0),
-(26, 'mohamed', 1, 100, 1, 42, '2019-03-11 02:25:20', '2019-03-11 02:25:20', 0),
-(27, 'mohamed', 0, 0, 1, 42, '2019-03-11 12:27:24', '2019-03-11 12:27:24', 0),
-(28, 'mohamed', 2, 100, 1, 42, '2019-03-12 23:00:30', '2019-03-12 23:00:30', 0),
-(29, 'mohamed', 12, 12, 1, 42, '2019-03-12 23:00:43', '2019-03-12 23:00:43', 0),
-(30, 'mohamed', 12, 100, 1, 42, '2019-03-12 23:04:00', '2019-03-12 23:04:00', 0),
-(31, 'mohamed', 12, 100, 1, 42, '2019-03-12 23:10:45', '2019-03-12 23:10:45', 0),
-(32, 'mohamed', 12, 100, 1, 42, '2019-03-12 23:10:59', '2019-03-12 23:10:59', 0),
-(33, '', 0, 0, 1, 42, '2019-03-14 11:42:57', '2019-03-14 11:42:57', 0);
+(3, 'vip', 100, 20, 1, 65, '2019-03-19 07:16:44', '2019-03-19 07:16:44', 0),
+(4, 'gender', 122, 23, 1, 55, '2019-03-19 07:18:29', '2019-03-19 07:18:29', 0),
+(5, 'mohamed', -100, -100, 1, 142, '2019-04-08 21:59:35', '2019-04-08 21:59:35', 0),
+(6, 'mohamed', -100, -100, 1, 142, '2019-04-08 22:01:15', '2019-04-08 22:01:15', 0),
+(7, 'mohamed', 100, 100, 1, 142, '2019-04-08 22:02:48', '2019-04-08 22:02:48', 0);
 
 -- --------------------------------------------------------
 
@@ -402,11 +411,41 @@ INSERT INTO `product` (`id`, `name`, `price`, `quantity`, `currencyId`, `product
 CREATE TABLE `productoptions` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `dataType` varchar(255) NOT NULL,
+  `dataType` varchar(30) NOT NULL,
   `createdDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `lastUpdatedDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `isDeleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `productoptions`
+--
+
+INSERT INTO `productoptions` (`id`, `name`, `dataType`, `createdDate`, `lastUpdatedDate`, `isDeleted`) VALUES
+(10, 'code', 'number', '2019-03-18 23:20:39', '2019-03-18 23:20:39', 0),
+(11, 'code', 'number', '2019-03-18 23:21:44', '2019-03-18 23:21:44', 0),
+(12, 'code', 'text', '2019-03-18 23:22:13', '2019-03-18 23:22:13', 0),
+(13, 'code', 'text', '2019-03-18 23:24:15', '2019-03-18 23:24:15', 0),
+(14, 'code', 'text', '2019-03-18 23:25:25', '2019-03-18 23:25:25', 0),
+(15, 'code', 'text', '2019-03-18 23:26:15', '2019-03-18 23:26:15', 0),
+(16, 'code', 'text', '2019-03-18 23:33:25', '2019-03-18 23:33:25', 0),
+(17, 'code', 'text', '2019-03-18 23:35:40', '2019-03-18 23:35:40', 0),
+(18, 'code', 'text', '2019-03-18 23:37:48', '2019-03-18 23:37:48', 0),
+(19, 'code', 'text', '2019-03-18 23:39:07', '2019-03-18 23:39:07', 0),
+(20, 'nickname', 'text', '2019-03-18 23:39:07', '2019-03-18 23:39:07', 0),
+(21, 'code', 'text', '2019-03-18 23:39:22', '2019-03-18 23:39:22', 0),
+(22, 'nickname', 'text', '2019-03-18 23:39:22', '2019-03-18 23:39:22', 0),
+(23, 'code', 'text', '2019-03-18 23:45:55', '2019-03-18 23:45:55', 0),
+(24, 'nickname', 'text', '2019-03-18 23:45:56', '2019-03-18 23:45:56', 0),
+(25, 'code', 'text', '2019-03-18 23:46:16', '2019-03-18 23:46:16', 0),
+(26, 'nickname', 'text', '2019-03-18 23:46:16', '2019-03-18 23:46:16', 0),
+(27, 'code', 'text', '2019-03-18 23:46:39', '2019-03-18 23:46:39', 0),
+(28, 'nickname', 'text', '2019-03-18 23:46:39', '2019-03-18 23:46:39', 0),
+(29, 'code', 'text', '2019-03-18 23:47:19', '2019-03-18 23:47:19', 0),
+(30, 'nickname', 'text', '2019-03-18 23:47:19', '2019-03-18 23:47:19', 0),
+(31, 'code', 'number', '2019-03-18 23:54:37', '2019-03-18 23:54:37', 0),
+(32, 'gender', 'number', '2019-03-19 07:18:29', '2019-03-19 07:18:29', 0),
+(33, 'code', 'text', '2019-04-08 22:02:48', '2019-04-08 22:02:48', 0);
 
 -- --------------------------------------------------------
 
@@ -424,6 +463,25 @@ CREATE TABLE `productoptionsvalue` (
   `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `productoptionsvalue`
+--
+
+INSERT INTO `productoptionsvalue` (`id`, `value`, `productSelectedOptionsId`, `purchaseId`, `createDate`, `lastUpdatedDate`, `isDeleted`) VALUES
+(1, '22', 5, 1, '2019-03-19 05:20:16', '2019-03-19 05:20:16', 0),
+(2, '22', 5, 1, '2019-03-19 05:21:32', '2019-03-19 05:21:32', 0),
+(3, '22', 5, 1, '2019-03-19 05:24:00', '2019-03-19 05:24:00', 0),
+(4, '22', 5, 1, '2019-03-19 05:24:34', '2019-03-19 05:24:34', 0),
+(5, 'mohamed', 6, 1, '2019-03-19 05:24:34', '2019-03-19 05:24:34', 0),
+(6, '22', 5, 1, '2019-03-19 05:25:10', '2019-03-19 05:25:10', 0),
+(7, 'mohamed', 6, 1, '2019-03-19 05:25:11', '2019-03-19 05:25:11', 0),
+(8, '22', 5, 1, '2019-03-19 05:26:19', '2019-03-19 05:26:19', 0),
+(9, 'mohamed', 6, 1, '2019-03-19 05:26:19', '2019-03-19 05:26:19', 0),
+(10, '22', 5, 1, '2019-03-19 05:29:09', '2019-03-19 05:29:09', 0),
+(11, 'mohamed', 6, 1, '2019-03-19 05:29:09', '2019-03-19 05:29:09', 0),
+(12, '22', 5, 1, '2019-03-19 05:29:37', '2019-03-19 05:29:37', 0),
+(13, 'mohamed', 6, 1, '2019-03-19 05:29:37', '2019-03-19 05:29:37', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -438,6 +496,16 @@ CREATE TABLE `productselectedoptions` (
   `lastUpdatedDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `isDeleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `productselectedoptions`
+--
+
+INSERT INTO `productselectedoptions` (`id`, `productId`, `optionsId`, `createdDate`, `lastUpdatedDate`, `isDeleted`) VALUES
+(5, 2, 10, '2019-03-18 23:39:22', '2019-03-18 23:39:22', 0),
+(6, 2, 20, '2019-03-18 23:39:22', '2019-03-18 23:39:22', 0),
+(7, 4, 32, '2019-03-19 07:18:29', '2019-03-19 07:18:29', 0),
+(8, 2, 10, '2019-04-08 22:02:48', '2019-04-08 22:02:48', 0);
 
 -- --------------------------------------------------------
 
@@ -535,7 +603,31 @@ INSERT INTO `producttype` (`id`, `name`, `parentId`, `createdDate`, `lastUpdated
 (115, 'tickets', 0, '2019-03-12 23:10:52', '0000-00-00 00:00:00', 0),
 (116, 'tickets', 0, '2019-03-12 23:11:22', '0000-00-00 00:00:00', 0),
 (117, 'mohamed', 0, '2019-03-14 11:32:43', '0000-00-00 00:00:00', 0),
-(118, 'tickets', 0, '2019-03-14 11:42:46', '0000-00-00 00:00:00', 0);
+(118, 'tickets', 0, '2019-03-14 11:42:46', '0000-00-00 00:00:00', 0),
+(119, '', 0, '2019-03-16 14:57:42', '2019-03-16 14:57:42', 0),
+(120, 'tickets', 0, '2019-03-17 17:46:46', '2019-03-17 17:46:46', 0),
+(121, 'tickets', 0, '2019-03-17 17:48:01', '2019-03-17 17:48:01', 0),
+(122, 'zahaby', 0, '2019-03-17 18:23:11', '2019-03-17 18:23:11', 0),
+(123, 'zahaby', 0, '2019-03-17 18:24:24', '2019-03-17 18:24:24', 0),
+(124, 'tickets', 0, '2019-03-17 18:24:30', '2019-03-17 18:24:30', 0),
+(125, 'tickets', 0, '2019-03-17 18:27:07', '2019-03-17 18:27:07', 0),
+(126, 'tickets', 0, '2019-03-17 18:27:31', '2019-03-17 18:27:31', 0),
+(127, 'tickets', 0, '2019-03-17 18:27:33', '2019-03-17 18:27:33', 0),
+(128, 'mohamed', 0, '2019-03-17 18:27:38', '2019-03-17 18:27:38', 0),
+(129, 'mohamed', 0, '2019-03-17 18:28:01', '2019-03-17 18:28:01', 0),
+(130, 'mohamed', 0, '2019-03-17 18:28:22', '2019-03-17 18:28:22', 0),
+(131, 'tickets', 0, '2019-03-17 18:28:26', '2019-03-17 18:28:26', 0),
+(132, 'mohamed', 0, '2019-03-17 18:28:33', '2019-03-17 18:28:33', 0),
+(133, 'mohamed', 0, '2019-03-17 18:29:58', '2019-03-17 18:29:58', 0),
+(134, 's', 0, '2019-03-17 18:30:04', '2019-03-17 18:30:04', 0),
+(135, 'tickets', 0, '2019-03-17 18:31:21', '2019-03-17 18:31:21', 0),
+(136, 'tickets', 0, '2019-03-17 18:32:06', '2019-03-17 18:32:06', 0),
+(137, 'tickets', 0, '2019-03-17 18:32:09', '2019-03-17 18:32:09', 0),
+(138, 'dd', 0, '2019-03-17 18:32:27', '2019-03-17 18:32:27', 0),
+(139, 'dd', 0, '2019-03-17 18:32:45', '2019-03-17 18:32:45', 0),
+(140, 'tickets', 0, '2019-03-17 18:32:51', '2019-03-17 18:32:51', 0),
+(141, 'tita', 0, '2019-03-17 20:21:02', '2019-03-17 20:21:02', 0),
+(142, 'zahaby', 0, '2019-04-08 21:57:17', '2019-04-08 21:57:17', 0);
 
 -- --------------------------------------------------------
 
@@ -554,6 +646,13 @@ CREATE TABLE `purchase` (
   `lastUpdatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isdeleted` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `purchase`
+--
+
+INSERT INTO `purchase` (`id`, `userId`, `datePurchaseId`, `manufactureId`, `deliveryPersonId`, `PaymentMethodId`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(1, 2, 1, 1, 2, 1, '2019-03-19 05:05:32', '2019-03-19 05:05:32', 0);
 
 -- --------------------------------------------------------
 
@@ -635,6 +734,13 @@ CREATE TABLE `user` (
   `lastUpdatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isdeleted` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `fname`, `lname`, `email`, `pwd`, `userTypeId`, `userAddressId`, `genderId`, `createdDate`, `lastUpdatedDate`, `isdeleted`) VALUES
+(2, 'mohamed', 'tarek', 'mohamed@gmail.com', 'mohamed123', 1, 1, 1, '2019-03-19 05:05:00', '2019-03-19 05:05:00', 0);
 
 -- --------------------------------------------------------
 
@@ -1019,7 +1125,7 @@ ALTER TABLE `currency`
 -- AUTO_INCREMENT for table `datepurchase`
 --
 ALTER TABLE `datepurchase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -1031,7 +1137,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `gender`
 --
 ALTER TABLE `gender`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `interests`
@@ -1043,13 +1149,13 @@ ALTER TABLE `interests`
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `manufacture`
 --
 ALTER TABLE `manufacture`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `manufacturecontactinfo`
@@ -1061,7 +1167,7 @@ ALTER TABLE `manufacturecontactinfo`
 -- AUTO_INCREMENT for table `paymentmethod`
 --
 ALTER TABLE `paymentmethod`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `paymentmethodoptions`
@@ -1085,37 +1191,37 @@ ALTER TABLE `paymentoptions`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `productoptions`
 --
 ALTER TABLE `productoptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `productoptionsvalue`
 --
 ALTER TABLE `productoptionsvalue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `productselectedoptions`
 --
 ALTER TABLE `productselectedoptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `producttype`
 --
 ALTER TABLE `producttype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `purchasedetails`
@@ -1145,7 +1251,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usercontactinfo`
@@ -1218,7 +1324,6 @@ ALTER TABLE `manufacture`
 -- Constraints for table `manufacturecontactinfo`
 --
 ALTER TABLE `manufacturecontactinfo`
-  ADD CONSTRAINT `manufacturecontactinfo_ibfk_1` FOREIGN KEY (`manufactureId`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `manufacturecontactinfo_ibfk_2` FOREIGN KEY (`contactNumberId`) REFERENCES `contactnumber` (`id`),
   ADD CONSTRAINT `manufacturecontactinfo_ibfk_3` FOREIGN KEY (`manufactureId`) REFERENCES `manufacture` (`id`);
 
