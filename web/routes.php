@@ -61,7 +61,9 @@ else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$G
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType']){
 	
-	Controller::view('addProductType');
+	Controller::includeClass('product\productType');
+	$productTypes = (new ProductType())->getAllTypes();
+	Controller::view('addProductType' , $productTypes);
 }
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLOBALS['submit']){
