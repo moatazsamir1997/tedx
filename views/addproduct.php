@@ -6,7 +6,6 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-
 		<!-- <link rel="shortcut icon" href="res\images\icons\product.png"/> -->
 		<link rel="stylesheet" type="text/css" href="res\css\addproduct.css">
 		<!-- <link rel="stylesheet" type="text/css" href="res\css\addproduct.css"> -->
@@ -21,6 +20,7 @@
 
 	<body  background = 'res\images\addproduct.jpg'>
 		<div class="addproduct" >
+			<br><br>
 			<h1><b>Add Product</b></h1>
 			<br><br>
 			<hr><br>
@@ -52,10 +52,9 @@
 
 				</select>
 			</form>
-			<button type="button" name="AnotherOption"  id="AnotherOption">add Option</button>';
-			
-
+			<button type="button" name="AnotherOption"  id="AnotherOption">add Option</button>
 		</div>
+		<br><br><br><br><br><br><br><br><br><br>
 	</body>
 	
 		

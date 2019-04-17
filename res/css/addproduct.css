@@ -144,7 +144,7 @@ input
 }
 
 
-.btn1 
+button 
 {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
@@ -160,7 +160,7 @@ input
 	margin-bottom: 10px;
   }
 
-  .btn1:hover 
+  button:hover 
   {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
