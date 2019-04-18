@@ -42,7 +42,7 @@
                 <div class="row">
                   <div class="col-md-10 col-md-offset-1 text-center">
                     <h2 class="font-family-alt font-weight-900 letter-spacing-2 text-white xs-title-extra-large sm-title-extra-large-3 title-extra-large-5">
-                      <span class="text-base-color">Igniting</span> Minds
+                      <span class="text-base-color">Dimensions
                     </h2>
                     <br>
                     <h3 class="font-weight-700 letter-spacing-2 text-white xs-title-large sm-title-extra-large title-extra-large-3">
@@ -52,7 +52,7 @@
                       at
                     </p>
                     <h4 class="font-family-alt font-weight-900 letter-spacing-2 text-uppercase text-white xs-title-small sm-title-medium title-extra-large">
-                      Jamia Millia Islamia
+                      Manarat Alfarouk Islamic School
                     </h4>
                     <!-- <br>
                     <a href="/register/" class="btn btn-base-color sm-btn-medium btn-large">
@@ -88,7 +88,7 @@
                       at
                     </p>
                     <h4 class="font-family-alt font-weight-900 letter-spacing-2 text-uppercase text-white xs-title-small sm-title-medium title-extra-large">
-                      Jamia Millia Islamia
+                      Manarat Alfarouk Islamic School
                     </h4>
                     <!-- <br>
                     <a href="/register/" class="btn btn-base-color sm-btn-medium btn-large">
@@ -127,24 +127,20 @@
           <div class="row">
             <div class="col-md-12">
               <p class="font-family-alt margin-5-5 no-margin-bottom no-margin-rl sm-text-large text-extra-large text-gray-dark-2">
-                TEDxJMI brings together a collection of doers, thinkers, innovators,
+                TEDxManaretAlfarouk brings together a collection of doers, thinkers, innovators,
                 explorers, visionaries, teachers, learners and seeks to illuminate,
                 inspire, change perceptions, incite action and foster new connections.
               </p>
 
               <p class="font-family-alt margin-5-5 no-margin-bottom no-margin-rl sm-text-large text-extra-large text-gray-dark-2">
-                <!-- We are focused on proffering a TED stage to speakers of varied backgrounds
+                We are focused on proffering a TED stage to speakers of varied backgrounds
                 and experiences for inspirational and intellectual acceleration. Our
                 event strategically allocates a window for collaboration of arts,
                 sciences, entrepreneurship and women empowerment - ideas that are close
-                to our central theme: <b>Igniting Minds</b>. -->
-                <?php include('views\ckeditor\codes\static pages\About Us.php');?>
+                to our central theme: <b>Igniting Minds</b>.
               </p>
             </div>
             <!-- //.col-sm-6 -->
-          
-            <!-- <button href ="" >ckeditor</button> -->
-            
           </div>
           <!-- //.row -->
         </div>
@@ -184,25 +180,28 @@
   <section id="venue" class="bg-cover bg-overlay-black-4 display-table height-100 no-padding width-100">
     <div class="display-table-cell vertical-align-middle">
       <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <h3 class="display-block font-family-alt font-weight-900 letter-spacing-2 text-uppercase text-white xs-title-extra-large-4 title-extra-large-4">
-              Venue
-            </h3>
-            <br>
-            <p class="font-family-alt letter-spacing-1 margin-3 no-margin-bottom no-margin-rl text-white xs-title-small title-large text-uppercase font-weight-700">
-              Dr. M. A. Ansari Auditorium,<br>
-              Jamia Millia Islamia
-            </p>
-            <br>
-            <!-- <a href="https://goo.gl/maps/4Y14DhZe4Fu" target="_blank"
-                class="btn btn-outline-white sm-btn-medium btn-large margin-4-5 no-margin-bottom no-margin-rl">
-              View location on map
-            </a> -->
+        <!-- The video -->
+        <video autoplay muted loop id="myVideo">
+          <source src="myvideo.mp4" type="video/mp4">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+              <h3 class="display-block font-family-alt font-weight-900 letter-spacing-2 text-uppercase text-white xs-title-extra-large-4 title-extra-large-4">
+                Venue
+              </h3>
+              <br>
+              <p class="font-family-alt letter-spacing-1 margin-3 no-margin-bottom no-margin-rl text-white xs-title-small title-large text-uppercase font-weight-700">
+                Manarat AlFarouk Islamic School
+              </p>
+              <br>
+              <a href="https://goo.gl/maps/o7HoyfXQCes" target="_blank"
+                  class="btn btn-outline-white sm-btn-medium btn-large margin-4-5 no-margin-bottom no-margin-rl">
+                View location on map
+              </a>
+            </div>
+            <!-- //.col-md-8 -->
           </div>
-          <!-- //.col-md-8 -->
-        </div>
-        <!-- //.row -->
+          <!-- //.row -->
+        </video>
       </div>
       <!-- //.container -->
     </div>

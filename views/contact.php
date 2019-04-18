@@ -20,7 +20,7 @@
             <i class="fa fa-envelope-o display-block text-base-color title-extra-large-2"></i>
             <br>
             <h4 class="font-weight-300 letter-spacing-1">
-              tedxjmi2017@gmail.com
+              TEDxManaretAlfarouk2017@gmail.com
             </h4>
           </div>
           <!-- //.row -->
@@ -64,7 +64,7 @@
             </span> -->
             <br>
             <h4 class="font-weight-300 letter-spacing-1">
-              Jamia Millia Islamia
+              Manarat Alfarouk Islamic School
               <br>Maulana Mohammad Ali Jauhar Marg
               <br>Jamia Nagar
               <br>New Delhi 110025

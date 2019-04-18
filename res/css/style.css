@@ -59,7 +59,7 @@
 /* Home BG Static (default) */
 
 #home {
-  background: url("../images/bg-home-1.jpg");
+  background: url("../images/manaratAlfarouk.jpg");
 }
 
 
@@ -73,7 +73,7 @@
 /* Home BG Slideshow */
 
 #home-bg-slideshow .bg-slideshow-wrapper .slides > .bg-cover:nth-child(1) {
-  background: url("../images/bg-home-1.jpg");
+  background: url("../images/manaratAlfarouk.jpg");
 }
 #home-bg-slideshow .bg-slideshow-wrapper .slides > .bg-cover:nth-child(2) {
   background: url("../images/bg-home-2.jpg");
@@ -86,7 +86,7 @@
 /* Home BG Slider */
 
 #home-bg-slider .bg-slider-wrapper .flickity-slider .bg-cover:nth-child(1) {
-  background: url("../images/bg-home-1.jpg");
+  background: url("../images/manaratAlfarouk.jpg");
 }
 #home-bg-slider .bg-slider-wrapper .flickity-slider .bg-cover:nth-child(2) {
   background: url("../images/bg-home-2.jpg");
@@ -192,7 +192,14 @@
   margin-bottom: 24px;
 }
 
-
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
 
 /*
   Section - Venue
@@ -200,7 +207,7 @@
 */
 
 #venue {
-  background-image: url("../images/bg-venue.jpg");
+  background-image: url("../images/manaratAlfarouk.jpg");
   background-position: center bottom !important;
 }
 

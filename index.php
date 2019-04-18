@@ -2,7 +2,7 @@
 
 session_start();
 
-include('app/Helpers/Helper.php');
+include('app/controllers/controller.php');
 
 include_once('web/routes.php');
 

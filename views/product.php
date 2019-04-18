@@ -22,15 +22,15 @@
   <!-- //.col-md-6 -->
 </div>
 
-<div class="row margin-5 no-margin-rl no-margin-bottom">
+<div class="row margin-5 no-margin-rl " >
   <div class="col-md-5 no-padding-rl">
     <div class="row text-center">
       <h3 class="font-family-alt font-weight-900 letter-spacing-2 text-uppercase xs-title-small title-medium title-sideline-base-color">
         Add Product Value
       </h3>
-      <a href="addproduct.php" class="btn btn-outline-base-color sm-btn-medium btn-large no-margin-rl"> + </a>
+      <a href="<?php echo $GLOBALS['ASSET'].$GLOBALS['product'].'/'.$GLOBALS['addValue'];?>" class="btn btn-outline-base-color sm-btn-medium btn-large no-margin-rl"> + </a>
     </div>   
   </div>
   <!-- //.col-md-5 -->
 </div>
-
+<?php include('views\layouts\footer.php');?>

@@ -1,11 +1,12 @@
 <?php
-$config = new Helper();
 
+$config = new Controller();
+require('app\controllers\linksController.php');
+$linksController = new linksController();
 
 $GLOBALS['ASSET'] = "../tedx/";
 $GLOBALS['tedx'] = "/tedx/";
 $GLOBALS['/tedx'] = "tedx/";
-
 $GLOBALS['addProduct'] = "addProduct";
 $GLOBALS['addOptions'] = "addOptions";
 $GLOBALS['productType'] = "productType";
@@ -21,103 +22,101 @@ $GLOBALS['contact'] = "contact";
 $GLOBALS['product'] = "product";
 $GLOBALS['register'] = "register";
 $GLOBALS['addNewProduct'] = 'addNewProduct';
-$GLOBALS['signup'] = 'signup';
-/* Main routes */
-if($_SERVER['REQUEST_URI'] == '/tedx/')
-{
-	Helper::route($GLOBALS['ASSET'].$GLOBALS['about']);
-}
+$GLOBALS['addValue'] = 'addValue';
+$GLOBALS['insert'] = '/insert';
+
+
+
 
 
 /** Functional routes **/
 
 
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['about']){
-	include('views/about.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['speakers']){
-	include('views/speakers.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['ourTeam']){
-	include('views/ourTeam.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['alumni']){
-	include('views/alumni.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['contact']){
-	include('views/contact.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product']){
-	include('views/product.php'); 
-}	
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['register']){
-	include('views/register.php'); 
-}
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
-	Helper::includeClass('product\productType');
+if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct']){
+	
+	Controller::includeClass('product\productType');
 	$ProductType = new ProductType();
 	$ProductTypes = $ProductType->getAllTypes();
-	Helper::view('addProduct' , $ProductTypes);
+	Controller::view('addProduct' , $ProductTypes);
 }
+
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addNewProduct'].$GLOBALS['submit']){
+	echo 1;
+	Controller::includeClass('product/ProductOptions');
+	echo 1;
+	Controller::includeClass('product/Product');
+	echo 1;
+	$Product = new Product();
+	$obj = new ProductOptions();
+	$Product->store($_POST);
+	$obj->insertOptionsData($_POST , $Product);
+	
+	$productId = $Product->getProductId($_POST['name']);
+	
+	$obj->insertProductId($productId['id']);
+
+	Controller::route('product');
+	
+}
+
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType']){
-	Helper::view('addProductType');
+	
+	Controller::includeClass('product\productType');
+	$productTypes = (new ProductType())->getAllTypes();
+	Controller::view('addProductType' , $productTypes);
 }
 
 else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['productType'].$GLOBALS['submit']){
-	Helper::includeClass('product/ProductType');
+	
+	Controller::includeClass('product/ProductType');
     $productType = new ProductType();
     $productType->store($_POST);
-	Helper::route('product');
+	Controller::route('product');
+}
+
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue']){
+	
+
+	Controller::includeClass('product\product');
+	$product = (new Product())->getProducts();
+	Controller::view('addValues',$product);
 }
 
 
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['submit']){
+	
 
-
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'] ) 
-{
-	Helper::includeClass('ProductType');
-	Helper::includeClass('Product');
-	$productType = new ProductType();
-	$product = new Product();
-	if(isset($_POST['addProduct']) && !empty($_POST))
-	{
-		$product->store($_POST);
-		Helper::view('addOptions');
+	Controller::includeClass('product\ProductOptions');
+	$productOption = new ProductOptions();
+	$productId = $_POST['productId'];
+	$arrOfIds = $productOption->getRelatedIds($productId);
+	$arrOfOptionsData = [];
+	foreach ($arrOfIds as $key) {
+		array_push($arrOfOptionsData ,$productOption->getById($key['optionsId']));
 	}
-	else
-	{
-		$productTypes = $productType->getColumnData('name');
-		Helper::view('productgeninsert', $productTypes);
-	} 
-}
-
-
-else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['addOptions'].$GLOBALS['submit']) 
-{
-	if(isset($_POST['Options']) && !empty($_POST))
-	{
-		$numOfOptions = (integer)$_POST['numOfOptions'];
-		include('views/'.'addOptionValuesSubmit'.".php");
+	$prOpIdsArr = [];
+	foreach ($arrOfIds as $key) {
+		
+			$prOpId = $productOption->getRelationids($productId , $key['optionsId']);
+			array_push($prOpIdsArr , $prOpId['id'] );
+		
 	}
+	$_SESSION['arrids'] = $prOpIdsArr;
+	Controller::view('retrieveValues' , $arrOfOptionsData );
+}
+
+else if($_SERVER['REQUEST_URI'] == $GLOBALS['tedx'].$GLOBALS['product'].'/'.$GLOBALS['addValue'].$GLOBALS['insert']){
+	
+
+	Controller::includeClass('product/productOptionsValue');
+	$valueObj = new ProductOptionsValue();
+	$valueObj->insertValues($_SESSION['arrids'],$_POST);
+	Controller::route('../product');
 }
 
 
-elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['signup'] ) {
 
-    // Helper::view('signup');
-    include("views/signup.php");
-}
-
-elseif ($_SERVER['REQUEST_URI']  == $GLOBALS['tedx'].$GLOBALS['signup'].$GLOBALS['submit'] ) {
-
-    require_once('backend\user\User.php'); 
-    if(isset($_POST['submit']))
-    {
-        // echo "test";
-      $user = new user;
-    //   var_dump($user);
-		$user->store($_POST);
-		// var_dump($user);
-	}
-	include("views/signup.php");
+else {
+	$link = $linksController->getPhysicalName($_SERVER['REQUEST_URI']);
+	include($link);
 }
